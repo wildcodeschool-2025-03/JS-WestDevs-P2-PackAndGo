@@ -1,22 +1,15 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-.navbar {
+header nav {
   background-color: #ffb400;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0 1.5rem 0;
 
-  .navbar-burger {
+  button {
     cursor: pointer;
     display: none;
     font-size: 1.5em;
+    background: none;
+    border: none;
 
     @media screen and (max-width: 768px) {
       display: block;

@@ -11,7 +11,7 @@ function Header() {
 
   return (
     <header>
-      <nav className="navbar">
+      <nav>
         <figure>
           <img src="./Logo.png" alt="logo" className="logo-site" />
         </figure>
@@ -19,30 +19,26 @@ function Header() {
         <div className="header-icone-container">
           <img src="./icone connexion.png" alt="icone" className="icone" />
 
-          <div
-            className="navbar-burger"
-            onClick={toggleMenu}
-            onKeyDown={toggleMenu}
-          >
+          <button onClick={toggleMenu} type="button">
             ☰
-          </div>
+          </button>
           <ul className={`navbar-list ${isMenuOpen ? "show" : ""}`}>
-            <li className="navbar-item">
+            <li>
               <Link to="/" onClick={toggleMenu}>
                 Home
               </Link>
             </li>
-            <li className="navbar-item">
+            <li>
               <Link to="/" onClick={toggleMenu}>
                 Destinations
               </Link>
             </li>
-            <li className="navbar-item">
+            <li>
               <Link to="/" onClick={toggleMenu}>
-                Mes Favoris
+                Mes favoris
               </Link>
             </li>
-            <li className="navbar-item">
+            <li>
               <Link to="/" onClick={toggleMenu}>
                 About
               </Link>
