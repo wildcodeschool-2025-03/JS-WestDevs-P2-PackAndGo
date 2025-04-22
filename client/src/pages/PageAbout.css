@@ -1,0 +1,47 @@
+.background {
+  background-image: url("/About-Background.jpg");
+  background-size: cover;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  color: white;
+
+  h2 {
+    padding: 80px 40px 40px 40px;
+  }
+
+  p {
+    width: 75%;
+    margin: auto;
+    padding: 30px;
+  }
+
+  @media screen and (max-width: 600px) {
+    p {
+      width: 350px;
+    }
+  }
+
+  .avatar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 80px;
+  }
+
+  figure {
+    text-align: center;
+    img {
+      width: 100px;
+    }
+    .prenom {
+      padding: 5px;
+      color: black;
+    }
+
+    .github {
+      width: 25px;
+    }
+  }
+}
