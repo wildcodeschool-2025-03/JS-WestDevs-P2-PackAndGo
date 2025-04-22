@@ -12,11 +12,11 @@ function Header() {
   return (
     <header>
       <nav className="navbar">
-        <div>
+        <figure>
           <img src="./Logo.png" alt="logo" className="logo-site" />
-        </div>
+        </figure>
 
-        <div className="test">
+        <div className="header-icone-container">
           <img src="./icone connexion.png" alt="icone" className="icone" />
 
           <div
