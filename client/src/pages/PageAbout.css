@@ -18,8 +18,10 @@
   }
 
   @media screen and (max-width: 600px) {
-    p {
-      width: 350px;
+    .background {
+      p {
+        width: 350px;
+      }
     }
   }
 
@@ -30,7 +32,7 @@
     margin-top: 80px;
   }
 
-  figure {
+  .menbres {
     text-align: center;
     img {
       width: 100px;
