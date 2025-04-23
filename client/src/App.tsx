@@ -1,11 +1,13 @@
+import Header from "./components/Header/Header";
 import Countries from "./pages/Countries/Countries";
+
 function App() {
   return (
     <>
-      <h1>Coucou</h1>
-
+      <Header />
       <Countries />
     </>
   );
 }
+
 export default App;
