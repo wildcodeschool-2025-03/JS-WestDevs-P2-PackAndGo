@@ -1,5 +1,4 @@
 .testhome {
-  height: 100vh;
   background-image: url(../../../public/background-Homepage.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -17,14 +16,16 @@
     color: #652306;
     font-size: 1.1rem;
     margin-bottom: 2rem;
+    /* padding-left: 1rem; */
   }
 
   .testnumber2 {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 2rem;
-    margin-top: auto;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding-top: 64px;
   }
 
   p {
@@ -49,11 +50,8 @@
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .main-container-home {
-    .testnumber2 {
-      align-items: stretch;
-    }
     h1 {
       font-size: 2rem;
     }
@@ -61,10 +59,6 @@
       align-self: flex-start;
       padding-left: 1rem;
       font-size: 1.5rem;
-    }
-
-    a {
-      align-self: flex-end;
     }
   }
 }
