@@ -13,7 +13,7 @@
     margin: 0;
     flex-wrap: wrap;
     li {
-     padding: 1rem;
+      padding: 1rem;
       a {
         text-decoration: none;
         color: black;
@@ -28,23 +28,18 @@
   display: none;
   width: 24px;
 }
-@media (min-width: 360px) { 
 
+@media (min-width: 360px) {
   .github-logo-left {
     display: none;
-    
   }
   .github-logo-right {
     display: block;
     margin-top: 1rem;
-    align-self: center; 
+
+    align-self: center;
   }
- 
 }
 article {
   padding-left: 16px;
 }
-
-
-
-
