@@ -2,8 +2,8 @@ import "./Home.css";
 
 function Home() {
   return (
-    <div className="testhome">
-      <main className="main-container-home">
+    <main className="testhome">
+      <section className="section-container-home">
         <h1>Prépare ton sac, on t'emmène en voyage !</h1>
         <div className="testnumber2">
           <p>
@@ -17,8 +17,8 @@ function Home() {
             Explorer
           </a>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
 
