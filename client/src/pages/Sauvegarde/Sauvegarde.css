@@ -1,0 +1,59 @@
+.sauvegarde-main-container {
+  h1 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .travels-list {
+    display: grid;
+  }
+
+  .travel-card {
+    border-radius: 12px;
+  }
+
+  .travel-image {
+    width: 100%;
+  }
+
+  .btn-supprimer {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .container-figcaption-btn {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .icone-deleted {
+    width: 20px;
+  }
+
+  .button-connecter {
+    background-color: #f4c7c7;
+    justify-content: center;
+    margin: 16px 0 16px 24px;
+    border: none;
+    border-radius: 23px;
+    padding: 0.5rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    h1 {
+      font-size: 32px;
+    }
+    .travels-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .button-connecter {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
