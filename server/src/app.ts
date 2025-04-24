@@ -1,9 +1,15 @@
-// Load the express module to create a web application
-
+import cors from "cors";
 import express from "express";
-
+// Load the express module to create a web application
+import data from "../database/data.json";
 const app = express();
 
+if (process.env.CLIENT_URL != null) {
+  app.use(cors({ origin: [process.env.CLIENT_URL] }));
+}
+app.get("/data", (req, res) => {
+  res.json(data);
+});
 // Configure it
 
 /* ************************************************************************* */
@@ -17,12 +23,6 @@ const app = express();
 
 // You should NOT do that: such code uses the `cors` module to allow all origins, which can pose security issues.
 // For this pedagogical template, the CORS code allows CLIENT_URL in development mode (when process.env.CLIENT_URL is defined).
-
-import cors from "cors";
-
-if (process.env.CLIENT_URL != null) {
-  app.use(cors({ origin: [process.env.CLIENT_URL] }));
-}
 
 // If you need to allow extra origins, you can add something like this:
 
