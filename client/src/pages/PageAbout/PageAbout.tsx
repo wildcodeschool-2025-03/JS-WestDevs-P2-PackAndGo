@@ -25,7 +25,7 @@ const membres = [
 
 function PageAbout() {
   return (
-    <main className="background">
+    <main className="background-page-about">
       <h2>Bienvenue chez PACK&GO !</h2>
       <p>
         Derrière chaque itinéraire soigné, chaque conseil de pro et chaque

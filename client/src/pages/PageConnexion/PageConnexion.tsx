@@ -2,7 +2,7 @@ import "./PageConnexion.css";
 
 function PageConnexion() {
   return (
-    <div className="background">
+    <div className="background-page-connexion">
       <div className="form-container">
         <p className="title">Connexion</p>
         <form className="form">

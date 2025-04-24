@@ -1,10 +1,9 @@
-.background {
+.background-page-connexion {
   background-image: url("/Connexion-Background.png");
   background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
-  height: 100%;
-  width: 100%;
-  position: fixed;
+  min-height: calc(100vh - 55.453px - 72px);
 }
 
 .form-container {
@@ -14,11 +13,10 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
   padding: 20px 30px;
-  margin: 50px auto;
+  margin: 0 auto;
 }
 
 .title {
-  text-align: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   margin: 10px 0 30px 0;
@@ -27,7 +25,6 @@
 }
 
 .form {
-  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -38,13 +35,11 @@
   border-radius: 20px;
   border: 1px solid #c0c0c0;
   outline: 0 !important;
-  box-sizing: border-box;
   padding: 12px 15px;
 }
 
 .page-link {
   text-decoration: underline;
-  margin: 0;
   text-align: end;
   color: #747474;
   text-decoration-color: #747474;
@@ -100,10 +95,8 @@
 }
 
 .buttons-container {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   margin-top: 20px;
   gap: 15px;
 }
@@ -111,7 +104,6 @@
 .apple-login-button,
 .google-login-button {
   border-radius: 20px;
-  box-sizing: border-box;
   padding: 10px 15px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px
     0px 1px;
@@ -136,10 +128,4 @@
 
 .google-login-button {
   border: 2px solid #747474;
-}
-
-.apple-icon,
-.google-icon {
-  font-size: 18px;
-  margin-bottom: 1px;
 }
