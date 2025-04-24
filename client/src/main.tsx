@@ -7,8 +7,8 @@ import "./global.css";
 
 // Import the main app component
 import App from "./App";
-import PageAbout from "./pages/PageAbout";
-import PageConnexion from "./pages/PageConnexion";
+import PageAbout from "./pages/PageAbout/PageAbout";
+import PageConnexion from "./pages/PageConnexion/PageConnexion";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
