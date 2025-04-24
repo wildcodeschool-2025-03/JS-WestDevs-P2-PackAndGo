@@ -1,8 +1,35 @@
 // Load the express module to create a web application
 
 import express from "express";
-
+import datastorage from "../database/data/datastorage.json";
 const app = express();
+import cors from "cors";
+
+if (process.env.CLIENT_URL != null) {
+  app.use(cors({ origin: [process.env.CLIENT_URL] }));
+}
+interface Country {
+  id: number;
+  name: string;
+  image: string;
+  tagline: string;
+}
+// Chemin vers le fichier de données (attention, j'ai ajouté database et modifié en datastorage.json au lieu de data.json)
+const dataFilePath = path.join(
+  __dirname,
+  "database",
+  "data",
+  "datastorage.json",
+);
+
+//  fin de ex api;js, now data.json
+app.get("/", (req, res) => {
+  res.send("Prêt(e)s à découvrir le monde !🌍✨");
+});
+
+app.get("/countries", (req, res) => {
+  res.json(datastorage);
+});
 
 // Configure it
 
@@ -17,12 +44,6 @@ const app = express();
 
 // You should NOT do that: such code uses the `cors` module to allow all origins, which can pose security issues.
 // For this pedagogical template, the CORS code allows CLIENT_URL in development mode (when process.env.CLIENT_URL is defined).
-
-import cors from "cors";
-
-if (process.env.CLIENT_URL != null) {
-  app.use(cors({ origin: [process.env.CLIENT_URL] }));
-}
 
 // If you need to allow extra origins, you can add something like this:
 
@@ -52,7 +73,7 @@ app.use(
 
 // Uncomment one or more of these options depending on the format of the data sent by your client:
 
-// app.use(express.json());
+app.use(express.json());
 // app.use(express.urlencoded());
 // app.use(express.text());
 // app.use(express.raw());
