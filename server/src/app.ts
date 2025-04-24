@@ -1,9 +1,9 @@
-// Load the express module to create a web application
-
+import cors from "cors";
 import express from "express";
+// Load the express module to create a web application
+import data from "../database/data.json";
 import datastorage from "../database/data/datastorage.json";
 const app = express();
-import cors from "cors";
 
 if (process.env.CLIENT_URL != null) {
   app.use(cors({ origin: [process.env.CLIENT_URL] }));
@@ -14,13 +14,6 @@ interface Country {
   image: string;
   tagline: string;
 }
-// Chemin vers le fichier de données (attention, j'ai ajouté database et modifié en datastorage.json au lieu de data.json)
-const dataFilePath = path.join(
-  __dirname,
-  "database",
-  "data",
-  "datastorage.json",
-);
 
 //  fin de ex api;js, now data.json
 app.get("/", (req, res) => {
@@ -31,6 +24,12 @@ app.get("/countries", (req, res) => {
   res.json(datastorage);
 });
 
+if (process.env.CLIENT_URL != null) {
+  app.use(cors({ origin: [process.env.CLIENT_URL] }));
+}
+app.get("/data", (req, res) => {
+  res.json(data);
+});
 // Configure it
 
 /* ************************************************************************* */
