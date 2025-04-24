@@ -2,10 +2,10 @@ import "./Home.css";
 
 function Home() {
   return (
-    <main className="testhome">
-      <section className="section-container-home">
+    <main className="home-main-container">
+      <section>
         <h1>Prépare ton sac, on t'emmène en voyage !</h1>
-        <div className="testnumber2">
+        <article>
           <p>
             Découvrez 20 pays fascinants et plongez dans 5 villes emblématiques
             par destination. <br />
@@ -16,7 +16,7 @@ function Home() {
           <a href="/" target="_blank" rel="noopener noreferrer">
             Explorer
           </a>
-        </div>
+        </article>
       </section>
     </main>
   );
