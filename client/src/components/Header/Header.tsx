@@ -17,11 +17,13 @@ function Header() {
         </figure>
 
         <div className="header-icone-container">
-          <img
-            src="./icone-header-connexion.png"
-            alt="icone"
-            className="icone"
-          />
+          <Link to="/connexion">
+            <img
+              src="./icone-header-connexion.png"
+              alt="icone"
+              className="icone"
+            />{" "}
+          </Link>
 
           <button onClick={toggleMenu} type="button">
             ☰
