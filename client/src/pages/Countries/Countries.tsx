@@ -14,6 +14,7 @@ function Countries() {
           Découvrez le Sénégal, la terre de la Teranga, où l’hospitalité et les
           paysages vibrants séduisent les âmes en quête de sérénité.
         </p>
+        <p>test</p>
       </figure>
     </main>
   );
