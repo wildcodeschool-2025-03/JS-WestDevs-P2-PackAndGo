@@ -17,7 +17,11 @@ function Header() {
         </figure>
 
         <div className="header-icone-container">
-          <img src="./icone connexion.png" alt="icone" className="icone" />
+          <img
+            src="./icone-header-connexion.png"
+            alt="icone"
+            className="icone"
+          />
 
           <button onClick={toggleMenu} type="button">
             ☰

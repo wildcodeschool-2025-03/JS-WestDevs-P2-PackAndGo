@@ -96,7 +96,7 @@ header nav {
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .icone {
     margin-top: 8px;
   }
