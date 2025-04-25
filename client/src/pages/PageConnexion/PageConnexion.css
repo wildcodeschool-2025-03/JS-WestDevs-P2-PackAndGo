@@ -4,6 +4,8 @@
   background-repeat: no-repeat;
   text-align: center;
   min-height: calc(100vh - 55.453px - 72px);
+  display: flex;
+  align-items: center;
 }
 
 .form-container {

@@ -9,25 +9,16 @@
   h2 {
     padding: 80px 40px 40px 40px;
   }
-
+  .avatar {
+    display: grid;
+  }
   p {
     width: 75%;
     margin: auto;
     padding: 30px;
   }
 
-  @media screen and (max-width: 600px) {
-    .background {
-      p {
-        width: 350px;
-      }
-    }
-  }
-
   .avatar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     margin-top: 80px;
     gap: 64px;
   }
@@ -44,6 +35,16 @@
 
     .github {
       width: 25px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .avatar {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media screen and (min-width: 992px) {
+    .avatar {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }
