@@ -9,7 +9,7 @@ import "./global.css";
 import App from "./App";
 import PageAbout from "./pages/PageAbout/PageAbout";
 import PageConnexion from "./pages/PageConnexion/PageConnexion";
-
+import Countries from "./pages/Countries/Countries";
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
 
@@ -31,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/connexion",
         element: <PageConnexion />,
+      },
+      {
+        path: "/countries",
+        element: <Countries />,
       },
     ], // The root path
   },
