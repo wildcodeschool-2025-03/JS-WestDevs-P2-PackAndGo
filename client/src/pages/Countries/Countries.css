@@ -1,23 +1,234 @@
-main {
-  background-color: #f2f2f2;
-}
-main h1 {
+.countries-main-container {
   text-align: center;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+.countries-main-container h1 {
+  flex-basis: 100%;
   margin: 0;
   padding-top: 48px;
   padding-bottom: 48px;
 }
 
-figure {
-  text-align: center;
-}
-figure figcaption {
-  padding-bottom: 16px;
+.countries-main-container img {
+  display: block;
+  max-width: 100%;
 }
 
-img {
-  width: 300px;
-  border-radius: 20px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3)
-    0px 30px 60px -30px;
+.stack {
+  width: 100%;
+  max-width: 700px;
+  transition: 0.25s ease;
+  display: flex;
+  justify-content: center;
+}
+
+.stack:hover {
+  transform: rotate(5deg);
+}
+
+.stack:hover .card:before {
+  transform: translateY(-2%) rotate(-4deg);
+}
+
+.stack:hover .card:after {
+  transform: translateY(2%) rotate(4deg);
+}
+
+.card {
+  width: 80%;
+  max-width: 320px;
+  border: 3px solid;
+  background-color: #fae4e4;
+  position: relative;
+  transition: 0.15s ease;
+  cursor: pointer;
+  padding: 0% 2% 2% 2%;
+}
+
+.card:before,
+.card:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 3px solid;
+  background-color: #fae4e4;
+  transform-origin: center center;
+  z-index: -1;
+  transition: 0.15s ease;
+  top: 0;
+  left: 0;
+}
+
+.card:before {
+  transform: translateY(-2%) rotate(-6deg);
+}
+
+.card:after {
+  transform: translateY(2%) rotate(6deg);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border: 3px solid;
+  background-color: #eee;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  position: relative;
+}
+
+.love-heart:before,
+#switch {
+  display: none;
+}
+
+.love-heart,
+.love-heart::after {
+  border: 1px solid hsl(231deg 28% 86%);
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  width: 10px;
+  height: 8px;
+  border-bottom: 0;
+}
+
+.round {
+  position: absolute;
+  z-index: 1;
+  width: 8px;
+  height: 8px;
+  background: hsl(0, 98%, 49%);
+  box-shadow: rgb(0 0 0 / 24%) 0px 0px 4px 0px;
+  border-radius: 100%;
+  left: 0px;
+  bottom: -1px;
+  transition: all .5s ease;
+  animation: check-animation2 .5s forwards;
+}
+
+input:checked + label .round {
+  transform: translate(0px, 0px);
+  animation: check-animation .5s forwards;
+  background-color: hsl(0deg 0% 100%);
+}
+
+@keyframes check-animation {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(0px, 7px);
+  }
+
+  100% {
+    transform: translate(7px, 7px);
+  }
+}
+
+@keyframes check-animation2 {
+  0% {
+    transform: translate(7px, 7px);
+  }
+
+  50% {
+    transform: translate(0px, 7px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.love-heart {
+  box-sizing: border-box;
+  position: relative;
+  transform: rotate(-45deg) translate(-50%, -33px) scale(4);
+  display: block;
+  border-color: hsl(0, 0%, 0%);
+  cursor: pointer;
+  top: 0;
+}
+
+input:checked + .love-heart,
+input:checked + .love-heart::after,
+input:checked + .love-heart .bottom {
+  border-color: hsl(0, 0%, 0%);
+  box-shadow: inset 6px -5px 0px 2px hsl(103, 82%, 70%);
+}
+
+.love-heart::after,
+.love-heart .bottom {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  border-color: hsl(0, 0%, 0%);
+}
+
+.love-heart::after {
+  right: -9px;
+  transform: rotate(90deg);
+  top: 7px;
+}
+
+.love-heart .bottom {
+  width: 11px;
+  height: 11px;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  border-color: hsl(0, 0%, 0%);
+  left: -1px;
+  top: 5px;
+  border-radius: 0px 0px 0px 5px;
+}
+
+.love {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.countries-main-container figcaption {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.countries-main-container p {
+  font-size: 1rem;
+  font-weight: bolder;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.browser-warning {
+  margin-bottom: 4rem;
+}
+
+@supports (aspect-ratio: 1 / 1) {
+  .browser-warning {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 80%;
+    max-width: 700px;
+    aspect-ratio: 16 / 9;
+    padding: 0% 1% 2% 1%;
+  }
+
+  .image {
+    aspect-ratio: 16 / 9;
+  }
 }
