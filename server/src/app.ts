@@ -2,7 +2,27 @@ import cors from "cors";
 import express from "express";
 // Load the express module to create a web application
 import data from "../database/data.json";
+import datastorage from "../database/data/datastorage.json";
 const app = express();
+
+if (process.env.CLIENT_URL != null) {
+  app.use(cors({ origin: [process.env.CLIENT_URL] }));
+}
+interface Country {
+  id: number;
+  name: string;
+  image: string;
+  tagline: string;
+}
+
+//  fin de ex api;js, now data.json
+app.get("/", (req, res) => {
+  res.send("Prêt(e)s à découvrir le monde !🌍✨");
+});
+
+app.get("/countries", (req, res) => {
+  res.json(datastorage);
+});
 
 if (process.env.CLIENT_URL != null) {
   app.use(cors({ origin: [process.env.CLIENT_URL] }));
@@ -52,7 +72,7 @@ app.use(
 
 // Uncomment one or more of these options depending on the format of the data sent by your client:
 
-// app.use(express.json());
+app.use(express.json());
 // app.use(express.urlencoded());
 // app.use(express.text());
 // app.use(express.raw());

@@ -1,49 +1,50 @@
-.background {
+.background-page-about {
   background-image: url("/About-Background.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
-  height: 100%;
-  width: 100%;
-  position: fixed;
+  min-height: calc(100vh - 55.453px - 72px);
   color: white;
 
   h2 {
     padding: 80px 40px 40px 40px;
   }
-
+  .avatar {
+    display: grid;
+  }
   p {
     width: 75%;
     margin: auto;
     padding: 30px;
   }
 
-  @media screen and (max-width: 600px) {
-    .background {
-      p {
-        width: 350px;
-      }
-    }
-  }
-
   .avatar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     margin-top: 80px;
+    gap: 64px;
   }
 
-  .menbres {
+  .crew {
     text-align: center;
     img {
       width: 100px;
     }
-    .prenom {
+    .name {
       padding: 5px;
       color: black;
     }
 
     .github {
       width: 25px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .avatar {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media screen and (min-width: 992px) {
+    .avatar {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 }
