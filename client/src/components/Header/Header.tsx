@@ -45,7 +45,7 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="/" onClick={toggleMenu}>
+              <Link to="/about" onClick={toggleMenu}>
                 About
               </Link>
             </li>

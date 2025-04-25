@@ -7,6 +7,7 @@ import "./global.css";
 
 // Import the main app component
 import App from "./App";
+import Home from "./pages/Home/Home";
 import PageAbout from "./pages/PageAbout/PageAbout";
 import PageConnexion from "./pages/PageConnexion/PageConnexion";
 
@@ -26,11 +27,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/", // A modifier plus tard. La page home n'est pas disponible pour le moment.
-        element: <PageAbout />,
+        element: <Home />,
       },
       {
         path: "/connexion",
         element: <PageConnexion />,
+      },
+      {
+        path: "/about",
+        element: <PageAbout />,
       },
     ], // The root path
   },
