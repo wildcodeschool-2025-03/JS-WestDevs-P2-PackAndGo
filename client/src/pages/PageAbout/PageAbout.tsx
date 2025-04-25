@@ -2,22 +2,22 @@ import "./PageAbout.css";
 
 const membres = [
   {
-    prenom: "Ahmed",
+    name: "Ahmed",
     avatar: "avatar-Ahmed.png",
     github: "https://github.com/AhmedFikado",
   },
   {
-    prenom: "Leïla",
+    name: "Leïla",
     avatar: "avatar-Leila.png",
     github: "https://github.com/yali27",
   },
   {
-    prenom: "Bamba",
+    name: "Bamba",
     avatar: "avatar-Bamba.png",
     github: "https://github.com/Bamba0818",
   },
   {
-    prenom: "Cédric",
+    name: "Cédric",
     avatar: "avatar-Cedric.png",
     github: "https://github.com/CedricGOUYON",
   },
@@ -38,13 +38,13 @@ function PageAbout() {
       </p>
       <section className="avatar">
         {membres.map((membre) => (
-          <figure className="menbres" key={membre.prenom}>
-            <img src={`/Avatars/${membre.avatar}`} alt={membre.prenom} />
-            <p className="prenom">{membre.prenom}</p>
+          <figure className="crew" key={membre.name}>
+            <img src={`/Avatars/${membre.avatar}`} alt={membre.name} />
+            <p className="name">{membre.name}</p>
             <a href={membre.github} target="_blank" rel="noopener noreferrer">
               <img
                 src="/Avatars/Lien Github.png"
-                alt={`lien github ${membre.prenom}`}
+                alt={`lien github ${membre.name}`}
                 className="github"
               />
             </a>

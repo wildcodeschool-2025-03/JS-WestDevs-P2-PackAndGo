@@ -23,12 +23,12 @@
     gap: 64px;
   }
 
-  .menbres {
+  .crew {
     text-align: center;
     img {
       width: 100px;
     }
-    .prenom {
+    .name {
       padding: 5px;
       color: black;
     }
