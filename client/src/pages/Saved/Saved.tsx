@@ -1,11 +1,11 @@
 import { useState } from "react";
-import "./Sauvegarde.css";
+import "./Saved.css";
 
-function Sauvegarde() {
+function Saved() {
   const [travels, setTravels] = useState([
     { id: 1, name: "Japon", image: "/Japon.png" },
     { id: 2, name: "Vietnam", image: "/Vietnam.png" },
-    { id: 3, name: "Sénégal", image: "/Sénégal.png" },
+    { id: 3, name: "Sénégal", image: "/Senegal.png" },
     { id: 4, name: "Turquie", image: "/Turquie.png" },
     { id: 5, name: "Canada", image: "/Canada.png" },
     { id: 6, name: "France", image: "/France.png" },
@@ -16,7 +16,7 @@ function Sauvegarde() {
   };
 
   return (
-    <main className="sauvegarde-main-container">
+    <main className="save-main-container">
       <h1>Vos futurs voyages</h1>
       <div className="travels-list">
         {travels.map((travel) => (
@@ -30,7 +30,7 @@ function Sauvegarde() {
               <figcaption>{travel.name}</figcaption>
               <button
                 onClick={() => deleteTrip(travel.id)}
-                className="btn-supprimer"
+                className="btn-delete"
                 type="button"
               >
                 <img
@@ -43,11 +43,11 @@ function Sauvegarde() {
           </figure>
         ))}
       </div>
-      <button type="button" className="button-connecter">
+      <button type="button" className="connect-button">
         Connectez-vous pour conserver vos favoris
       </button>
     </main>
   );
 }
 
-export default Sauvegarde;
+export default Saved;
