@@ -7,9 +7,10 @@ import "./global.css";
 
 // Import the main app component
 import App from "./App";
+import Countries from "./pages/Countries/Countries";
 import PageAbout from "./pages/PageAbout/PageAbout";
 import PageConnexion from "./pages/PageConnexion/PageConnexion";
-import Countries from "./pages/Countries/Countries";
+
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
 
