@@ -11,6 +11,9 @@ import Countries from "./pages/Countries/Countries";
 import Home from "./pages/Home/Home";
 import PageAbout from "./pages/PageAbout/PageAbout";
 import PageConnexion from "./pages/PageConnexion/PageConnexion";
+import PageRegister from "./pages/PageRegister/PageRegister";
+import Saved from "./pages/Saved/Saved";
+import Town from "./pages/Town/Town";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -27,7 +30,7 @@ const router = createBrowserRouter([
     element: <App />, // Renders the App component for the home page
     children: [
       {
-        path: "/", // A modifier plus tard. La page home n'est pas disponible pour le moment.
+        path: "/",
         element: <Home />,
       },
       {
@@ -41,6 +44,18 @@ const router = createBrowserRouter([
       {
         path: "/countries",
         element: <Countries />,
+      },
+      {
+        path: "/register",
+        element: <PageRegister />,
+      },
+      {
+        path: "/saved",
+        element: <Saved />,
+      },
+      {
+        path: "/town",
+        element: <Town />,
       },
     ], // The root path
   },
