@@ -7,6 +7,7 @@ import "./global.css";
 
 // Import the main app component
 import App from "./App";
+import Countries from "./pages/Countries/Countries";
 import Home from "./pages/Home/Home";
 import PageAbout from "./pages/PageAbout/PageAbout";
 import PageConnexion from "./pages/PageConnexion/PageConnexion";
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <PageAbout />,
+      },
+      {
+        path: "/countries",
+        element: <Countries />,
       },
     ], // The root path
   },
