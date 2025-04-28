@@ -110,13 +110,19 @@
   left: 0px;
   bottom: -1px;
   transition: all .5s ease;
-  animation: check-animation2 .5s forwards;
+  animation: check-animation2 2s forwards;
 }
 
 input:checked + label .round {
   transform: translate(0px, 0px);
   animation: check-animation .5s forwards;
   background-color: hsl(0deg 0% 100%);
+}
+input[type="checkbox"] {
+  appearance: none;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 @keyframes check-animation {

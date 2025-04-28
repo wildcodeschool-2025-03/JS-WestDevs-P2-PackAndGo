@@ -28,8 +28,8 @@ function Countries() {
           <figure className="card">
             <figcaption>{element.name}</figcaption>
             <span className="love">
-              <input id="switch" type="checkbox" />
-              <label className="love-heart" htmlFor="switch">
+              <input id={`switch-${element.id}`} type="checkbox" />
+              <label className="love-heart" htmlFor={`switch-${element.id}`}>
                 <i className="left" />
                 <i className="right" />
                 <i className="bottom" />
