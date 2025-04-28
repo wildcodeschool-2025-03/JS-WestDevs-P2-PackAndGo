@@ -1,28 +1,105 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Countries.css";
 
+interface countryProp {
+  id: number;
+  name: string;
+  image: string;
+  tagline: string;
+}
+
 function Countries() {
-  const [countriesList] = useState([
-    {
-      id: 1,
-      name: "France",
-      image:
-        "https://cdn.pixabay.com/photo/2018/04/25/09/26/eiffel-tower-3349075_1280.jpg",
-      tagline:
-        "Laissez-vous captiver par la richesse culturelle et la beauté intemporelle de la France, un mélange de romantisme et de gastronomie.",
-    },
-    {
-      id: 2,
-      name: "Sénégal",
-      image:
-        "https://cdn.pixabay.com/photo/2020/11/30/17/43/salt-5791696_1280.jpg",
-      tagline:
-        "Découvrez le Sénégal, la terre de la Teranga, où l’hospitalité et les paysages vibrants séduisent les âmes en quête de sérénité.",
-    },
-  ]);
+  const [countriesList, setCountriesList] = useState<countryProp[]>([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3310/countries")
+      .then((response) => response.json())
+      .then((data) => setCountriesList(data.results));
+  }, []);
+
   return (
     <main className="countries-main-container">
-      <h1>Sélectionnez vots futures destinations</h1>
+      <section>
+        <h1>Sélectionnez vos futures destinations</h1>
+        <div className="section-banner">
+          <div id="star-1">
+            <div className="curved-corner-star">
+              <div id="curved-corner-bottomright" />
+              <div id="curved-corner-bottomleft" />
+            </div>
+            <div className="curved-corner-star">
+              <div id="curved-corner-topright" />
+              <div id="curved-corner-topleft" />
+            </div>
+          </div>
+
+          <div id="star-2">
+            <div className="curved-corner-star">
+              <div id="curved-corner-bottomright" />
+              <div id="curved-corner-bottomleft" />
+            </div>
+            <div className="curved-corner-star">
+              <div id="curved-corner-topright" />
+              <div id="curved-corner-topleft" />
+            </div>
+          </div>
+
+          <div id="star-3">
+            <div className="curved-corner-star">
+              <div id="curved-corner-bottomright" />
+              <div id="curved-corner-bottomleft" />
+            </div>
+            <div className="curved-corner-star">
+              <div id="curved-corner-topright" />
+              <div id="curved-corner-topleft" />
+            </div>
+          </div>
+
+          <div id="star-4">
+            <div className="curved-corner-star">
+              <div id="curved-corner-bottomright" />
+              <div id="curved-corner-bottomleft" />
+            </div>
+            <div className="curved-corner-star">
+              <div id="curved-corner-topright" />
+              <div id="curved-corner-topleft" />
+            </div>
+          </div>
+
+          <div id="star-5">
+            <div className="curved-corner-star">
+              <div id="curved-corner-bottomright" />
+              <div id="curved-corner-bottomleft" />
+            </div>
+            <div className="curved-corner-star">
+              <div id="curved-corner-topright" />
+              <div id="curved-corner-topleft" />
+            </div>
+          </div>
+
+          <div id="star-6">
+            <div className="curved-corner-star">
+              <div id="curved-corner-bottomright" />
+              <div id="curved-corner-bottomleft" />
+            </div>
+            <div className="curved-corner-star">
+              <div id="curved-corner-topright" />
+              <div id="curved-corner-topleft" />
+            </div>
+          </div>
+
+          <div id="star-7">
+            <div className="curved-corner-star">
+              <div id="curved-corner-bottomright" />
+              <div id="curved-corner-bottomleft" />
+            </div>
+            <div className="curved-corner-star">
+              <div id="curved-corner-topright" />
+              <div id="curved-corner-topleft" />
+            </div>
+          </div>
+        </div>
+      </section>
       {countriesList.map((element) => (
         <div key={element.id} className="stack">
           <figure className="card">
@@ -36,11 +113,7 @@ function Countries() {
                 <div className="round" />
               </label>
             </span>
-            <img
-              className="image"
-              src={element.image}
-              alt="Femme sénégalaise récoltant du sel"
-            />
+            <img className="image" src={element.image} alt={element.name} />
             <p>{element.tagline}</p>
           </figure>
         </div>

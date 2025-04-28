@@ -8,14 +8,7 @@ const app = express();
 if (process.env.CLIENT_URL != null) {
   app.use(cors({ origin: [process.env.CLIENT_URL] }));
 }
-interface Country {
-  id: number;
-  name: string;
-  image: string;
-  tagline: string;
-}
 
-//  fin de ex api;js, now data.json
 app.get("/", (req, res) => {
   res.send("Prêt(e)s à découvrir le monde !🌍✨");
 });
