@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import "./PageConnexion.css";
 
 function PageConnexion() {
@@ -17,7 +18,9 @@ function PageConnexion() {
         </form>
         <p className="sign-up-label">
           Vous n'avez pas de compte?{" "}
-          <span className="sign-up-link">Inscrivez vous</span>
+          <Link to="/register" className="sign-up-link">
+            Inscrivez vous
+          </Link>
         </p>
         <div className="buttons-container">
           <div className="apple-login-button">

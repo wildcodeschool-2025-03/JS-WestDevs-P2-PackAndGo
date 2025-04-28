@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import "./PageRegister.css";
 
 function PageRegister() {
@@ -15,7 +16,9 @@ function PageRegister() {
         </form>
         <p className="sign-up-label">
           Vous avez déjà un compte?{" "}
-          <span className="sign-up-link">Connectez-vous</span>
+          <Link to="/connexion" className="sign-up-link">
+            Connectez-vous
+          </Link>
         </p>
         <div className="buttons-container">
           <a href="/" className="apple-login-button">

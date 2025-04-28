@@ -35,17 +35,17 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="/" onClick={toggleMenu}>
+              <Link to="/countries" onClick={toggleMenu}>
                 Destinations
               </Link>
             </li>
             <li>
-              <Link to="/" onClick={toggleMenu}>
+              <Link to="/saved" onClick={toggleMenu}>
                 Mes favoris
               </Link>
             </li>
             <li>
-              <Link to="/" onClick={toggleMenu}>
+              <Link to="/about" onClick={toggleMenu}>
                 About
               </Link>
             </li>
