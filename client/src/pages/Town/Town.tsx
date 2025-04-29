@@ -1,17 +1,10 @@
 import "./Town.css";
 import { useEffect, useState } from "react";
-interface City {
-  data: {
-    id: string;
-    attributes: {
-      name: string;
-      realimage: string;
-      short_name: string;
-    };
-  };
-}
+import type City from "../../types/Town";
+
 function Town() {
   const [cities, setCities] = useState<City[]>([]);
+
   useEffect(() => {
     fetch("http://localhost:3310/api/cities")
       .then((response) => {
@@ -29,16 +22,17 @@ function Town() {
         console.error("Erreur détaillée:", error);
       });
   }, []);
+
   return (
     <main>
       <h1>Belgium</h1>
       <div className="list-cities">
         {cities.map((city) => {
           return (
-            <div key={city.data.id} className="city-item">
+            <figure key={city.data.id} className="city-item">
               <h2>{city.data.attributes.short_name}</h2>
               <img src={city.data.attributes.realimage} alt="test" />
-            </div>
+            </figure>
           );
         })}
       </div>
