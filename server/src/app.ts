@@ -1,7 +1,7 @@
 import cors from "cors";
 import express from "express";
 // Load the express module to create a web application
-import data from "../database/data.json";
+import cities from "../database/cities.json";
 import datastorage from "../database/data/datastorage.json";
 const app = express();
 
@@ -23,12 +23,9 @@ app.get("/", (req, res) => {
 app.get("/countries", (req, res) => {
   res.json(datastorage);
 });
-
-if (process.env.CLIENT_URL != null) {
-  app.use(cors({ origin: [process.env.CLIENT_URL] }));
-}
-app.get("/data", (req, res) => {
-  res.json(data);
+// API concernant les infos des villes
+app.get("/api/cities", (req, res) => {
+  res.json(cities);
 });
 // Configure it
 

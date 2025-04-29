@@ -1,19 +1,11 @@
 import { Link } from "react-router";
 import "./Town.css";
 import { useEffect, useState } from "react";
-interface City {
-  data: {
-    id: string;
-    attributes: {
-      name: string;
-      realimage: string;
-      short_name: string;
-      slug: string;
-    };
-  };
-}
+import type City from "../../types/Town";
+
 function Town() {
   const [cities, setCities] = useState<City[]>([]);
+
   useEffect(() => {
     fetch("http://localhost:3310/api/cities")
       .then((response) => {
