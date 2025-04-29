@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Saved.css";
+import { Link } from "react-router";
 
 function Saved() {
   const [travels, setTravels] = useState([
@@ -43,9 +44,11 @@ function Saved() {
           </figure>
         ))}
       </div>
-      <button type="button" className="connect-button">
-        Connectez-vous pour conserver vos favoris
-      </button>
+      <div className="connect">
+        <Link to="/PageConnexion" className="connect-button">
+          Connectez-vous pour conserver vos favoris
+        </Link>
+      </div>
     </main>
   );
 }
