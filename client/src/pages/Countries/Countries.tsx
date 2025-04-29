@@ -1,13 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Countries.css";
-
-interface countryProp {
-  id: number;
-  name: string;
-  image: string;
-  tagline: string;
-  description: string;
-}
+import type countryProp from "../../types/Countries";
 
 function Countries() {
   const [countriesList, setCountriesList] = useState<countryProp[]>([]);
