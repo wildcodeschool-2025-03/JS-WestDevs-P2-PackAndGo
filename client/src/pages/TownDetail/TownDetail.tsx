@@ -1,6 +1,57 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
+interface Accomodation {
+  average_price: number;
+  description: string;
+  currency: string;
+  tips?: string;
+}
+interface AccomodationTest {
+  hostel: Accomodation;
+  budget_hotel: Accomodation;
+  midrange_hotel: Accomodation;
+  luxury_hotel: Accomodation;
+  local_food: Accomodation;
+}
+interface Transport {
+  types?: string[];
+  average_ticket?: number | string;
+  average_fare?: number;
+  average_price_per_day?: number;
+  currency: string;
+  description: string;
+  tips: string;
+}
+interface TransportAll {
+  public: Transport;
+  taxi: Transport;
+  bike_rental: Transport;
+}
+interface Food {
+  specialties: string[];
+  description: string;
+  tips: string;
+}
+interface Budget {
+  is_expensive: boolean;
+  daily_average: number;
+  currency: string;
+  notes: string;
+  tips: string;
+}
+interface Culture {
+  must_see: string[];
+  description: string;
+  tips: string;
+}
+interface Global {
+  accommodation: AccomodationTest;
+  local_food: Food;
+  transport: TransportAll;
+  culture: Culture;
+  budget: Budget;
+}
 interface City {
   data: {
     id: string;
@@ -10,8 +61,7 @@ interface City {
       realimage: string;
       population?: number;
       slug: string;
-      google_events_url?: string;
-      // Ne marche pas, à revoir.
+      info: Global;
     };
   };
 }
@@ -49,9 +99,76 @@ function TownDetail() {
         {city.data.attributes.population && (
           <p>Population : {city.data.attributes.population}</p>
         )}
-        {/* {city.data.attributes.google_event_url && (
-          <a href={city.data.attributes.google_event_url}>test</a>
-        )} */}
+        <div>
+          <p>
+            For budget hotel:{" "}
+            {city.data.attributes.info.accommodation.budget_hotel.average_price}{" "}
+            {city.data.attributes.info.accommodation.budget_hotel.currency}
+          </p>
+          <p>
+            {" "}
+            {city.data.attributes.info.accommodation.budget_hotel.description}
+          </p>
+        </div>
+        <br />
+        <div>
+          <p>
+            For budget hostel classic:{" "}
+            {city.data.attributes.info.accommodation.hostel.average_price}{" "}
+            {city.data.attributes.info.accommodation.hostel.currency}
+          </p>
+          <p> {city.data.attributes.info.accommodation.hostel.description}</p>
+        </div>
+        <br />
+        <div>
+          <p>
+            For midrange hotel :{" "}
+            {
+              city.data.attributes.info.accommodation.midrange_hotel
+                .average_price
+            }{" "}
+            {city.data.attributes.info.accommodation.midrange_hotel.currency}
+          </p>
+          <p>
+            {" "}
+            {city.data.attributes.info.accommodation.midrange_hotel.description}
+          </p>
+        </div>
+        <br />
+        <div>
+          <p>
+            For luxury hotel:{" "}
+            {city.data.attributes.info.accommodation.luxury_hotel.average_price}{" "}
+            {city.data.attributes.info.accommodation.luxury_hotel.currency}
+          </p>
+          <p>
+            {" "}
+            {city.data.attributes.info.accommodation.luxury_hotel.description}
+          </p>
+        </div>
+        <br />
+        <div>
+          <p>Local food :</p>
+          <p>{city.data.attributes.info.local_food.specialties} </p>
+          <br />
+          <p> {city.data.attributes.info.local_food.description}</p>
+          <br />
+
+          <p> {city.data.attributes.info.local_food.tips}</p>
+        </div>
+        <br />
+        <div>
+          <p>Transport :</p>
+          <p>
+            Les différents moyen de transport:{" "}
+            {city.data.attributes.info.transport.public.types}{" "}
+          </p>
+          <br />
+          {/* <p> {city.data.attributes.info.transport.average_ticket}</p> */}
+          <br />
+
+          <p> {city.data.attributes.info.local_food.tips}</p>
+        </div>
       </div>
     </main>
   );
