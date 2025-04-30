@@ -14,6 +14,7 @@ import PageConnexion from "./pages/PageConnexion/PageConnexion";
 import PageRegister from "./pages/PageRegister/PageRegister";
 import Saved from "./pages/Saved/Saved";
 import Town from "./pages/Town/Town";
+import TownDetail from "./pages/TownDetail/TownDetail";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -54,8 +55,12 @@ const router = createBrowserRouter([
         element: <Saved />,
       },
       {
-        path: "/town",
+        path: "/countries/:countryName",
         element: <Town />,
+      },
+      {
+        path: "/countries/:countryName/:slug",
+        element: <TownDetail />,
       },
     ], // The root path
   },
