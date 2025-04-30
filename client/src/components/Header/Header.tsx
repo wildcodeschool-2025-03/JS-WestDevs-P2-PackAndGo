@@ -13,13 +13,13 @@ function Header() {
     <header>
       <nav>
         <figure>
-          <img src="./Logo.png" alt="logo" className="logo-site" />
+          <img src="Logo.png" alt="logo" className="logo-site" />
         </figure>
 
         <div className="header-icone-container">
           <Link to="/connexion">
             <img
-              src="./icone-header-connexion.png"
+              src="icone-header-connexion.png"
               alt="icone"
               className="icone"
             />{" "}
