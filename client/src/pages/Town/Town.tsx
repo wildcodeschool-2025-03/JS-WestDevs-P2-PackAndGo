@@ -34,7 +34,7 @@ function Town() {
         {cities.map((city) => {
           return (
             <Link
-              to={`/town/${city.data.attributes.slug}`}
+              to={`/countries/${countryName}/${city.data.attributes.slug}`}
               key={city.data.id}
               className="city-item"
             >
