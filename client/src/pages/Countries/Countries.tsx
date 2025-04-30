@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import "./Countries.css";
-import type countryProp from "../../types/Countries";
+import type CountryProp from "../../types/Countries";
 
 function Countries() {
-  const [countriesList, setCountriesList] = useState<countryProp[]>([]);
+  const [countriesList, setCountriesList] = useState<CountryProp[]>([]);
   const [favorites, setFavorites] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
@@ -23,78 +23,7 @@ function Countries() {
     <main className="countries-main-container">
       <h1>Sélectionnez vos futures destinations</h1>
       <section>
-        <div className="section-banner">
-          <div id="star-1">
-            <div className="curved-corner-star">
-              <div id="curved-corner-bottomright" />
-              <div id="curved-corner-bottomleft" />
-            </div>
-            <div className="curved-corner-star">
-              <div id="curved-corner-topright" />
-              <div id="curved-corner-topleft" />
-            </div>
-          </div>
-          <div id="star-2">
-            <div className="curved-corner-star">
-              <div id="curved-corner-bottomright" />
-              <div id="curved-corner-bottomleft" />
-            </div>
-            <div className="curved-corner-star">
-              <div id="curved-corner-topright" />
-              <div id="curved-corner-topleft" />
-            </div>
-          </div>
-          <div id="star-3">
-            <div className="curved-corner-star">
-              <div id="curved-corner-bottomright" />
-              <div id="curved-corner-bottomleft" />
-            </div>
-            <div className="curved-corner-star">
-              <div id="curved-corner-topright" />
-              <div id="curved-corner-topleft" />
-            </div>
-          </div>
-          <div id="star-4">
-            <div className="curved-corner-star">
-              <div id="curved-corner-bottomright" />
-              <div id="curved-corner-bottomleft" />
-            </div>
-            <div className="curved-corner-star">
-              <div id="curved-corner-topright" />
-              <div id="curved-corner-topleft" />
-            </div>
-          </div>
-          <div id="star-5">
-            <div className="curved-corner-star">
-              <div id="curved-corner-bottomright" />
-              <div id="curved-corner-bottomleft" />
-            </div>
-            <div className="curved-corner-star">
-              <div id="curved-corner-topright" />
-              <div id="curved-corner-topleft" />
-            </div>
-          </div>
-          <div id="star-6">
-            <div className="curved-corner-star">
-              <div id="curved-corner-bottomright" />
-              <div id="curved-corner-bottomleft" />
-            </div>
-            <div className="curved-corner-star">
-              <div id="curved-corner-topright" />
-              <div id="curved-corner-topleft" />
-            </div>
-          </div>
-          <div id="star-7">
-            <div className="curved-corner-star">
-              <div id="curved-corner-bottomright" />
-              <div id="curved-corner-bottomleft" />
-            </div>
-            <div className="curved-corner-star">
-              <div id="curved-corner-topright" />
-              <div id="curved-corner-topleft" />
-            </div>
-          </div>
-        </div>
+        <div className="section-banner" />
       </section>
 
       {countriesList.map((element) => (

@@ -1,4 +1,4 @@
-export default interface countryProp {
+export default interface CountryProp {
   id: number;
   name: string;
   image: string;
