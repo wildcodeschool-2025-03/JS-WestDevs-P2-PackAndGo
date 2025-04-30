@@ -38,11 +38,18 @@
 
   .connect-button {
     background-color: #f4c7c7;
-    justify-content: center;
-    margin: 16px 0 16px 54px;
+    text-decoration: none;
+    width: fit-content;
     border: none;
     border-radius: 23px;
     padding: 0.5rem;
+    cursor: pointer;
+    color: black;
+  }
+
+  .connect {
+    margin: 20px auto;
+    text-align: center;
   }
 }
 @media screen and (min-width: 768px) {
@@ -57,7 +64,7 @@
 
     .connect-button {
       display: block;
-      margin: 0 auto 32px auto;
+      margin: 32px auto;
     }
   }
 }
