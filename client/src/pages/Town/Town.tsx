@@ -1,7 +1,7 @@
 import "./Town.css";
 import { useEffect, useState } from "react";
-import type City from "../../types/Town";
 import { Link, useParams } from "react-router";
+import type City from "../../types/Town";
 
 function Town() {
   const [cities, setCities] = useState<City[]>([]);
