@@ -6,7 +6,7 @@ function Footer() {
         <p>The Adventurers of the lost code</p>
         <img
           className="github-logo-left"
-          src="./logo-github.svg"
+          src="logo-github.svg"
           alt="GitHub logo"
         />
       </article>
@@ -26,7 +26,7 @@ function Footer() {
           >
             <img
               className="github-logo-right"
-              src="./logo-github.svg"
+              src="logo-github.svg"
               alt="GitHub logo"
             />
           </a>
