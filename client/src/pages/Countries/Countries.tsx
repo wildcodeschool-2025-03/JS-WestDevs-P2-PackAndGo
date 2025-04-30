@@ -1,45 +1,67 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Countries.css";
+import type CountryProp from "../../types/Countries";
 
 function Countries() {
-  const [countriesList] = useState([
-    {
-      id: 1,
-      name: "France",
-      image:
-        "https://cdn.pixabay.com/photo/2018/04/25/09/26/eiffel-tower-3349075_1280.jpg",
-      tagline:
-        "Laissez-vous captiver par la richesse culturelle et la beauté intemporelle de la France, un mélange de romantisme et de gastronomie.",
-    },
-    {
-      id: 2,
-      name: "Sénégal",
-      image:
-        "https://cdn.pixabay.com/photo/2020/11/30/17/43/salt-5791696_1280.jpg",
-      tagline:
-        "Découvrez le Sénégal, la terre de la Teranga, où l’hospitalité et les paysages vibrants séduisent les âmes en quête de sérénité.",
-    },
-  ]);
+  const [countriesList, setCountriesList] = useState<CountryProp[]>([]);
+  const [favorites, setFavorites] = useState<Record<number, boolean>>({});
+
+  useEffect(() => {
+    fetch("http://localhost:3310/countries")
+      .then((response) => response.json())
+      .then((data) => setCountriesList(data.results));
+  }, []);
+
+  const toggleFavorite = (id: number) => {
+    setFavorites((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
   return (
     <main className="countries-main-container">
-      <h1>Sélectionnez vots futures destinations</h1>
+      <h1>Sélectionnez vos futures destinations</h1>
+      <section>
+        <div className="section-banner" />
+      </section>
+
       {countriesList.map((element) => (
         <div key={element.id} className="stack">
           <figure className="card">
-            <figcaption>{element.name}</figcaption>
-            <span className="love">
-              <input id={`switch-${element.id}`} type="checkbox" />
-              <label className="love-heart" htmlFor={`switch-${element.id}`}>
-                <i className="left" />
-                <i className="right" />
-                <i className="bottom" />
-                <div className="round" />
+            <figcaption>
+              {element.name}
+              <label htmlFor={`favorite-${element.id}`} className="container">
+                <input
+                  type="checkbox"
+                  id={`favorite-${element.id}`}
+                  name="favorite-checkbox"
+                  value="favorite-button"
+                  checked={favorites[element.id] || false}
+                  onChange={() => toggleFavorite(element.id)}
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill={favorites[element.id] ? "hsl(0deg 100% 50%)" : "none"}
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="feather feather-heart"
+                >
+                  <title>Ajouter aux favoris</title>
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
               </label>
-            </span>
+            </figcaption>
+
             <img
               className="image"
               src={element.image}
-              alt="Femme sénégalaise récoltant du sel"
+              alt={element.description}
             />
             <p>{element.tagline}</p>
           </figure>
