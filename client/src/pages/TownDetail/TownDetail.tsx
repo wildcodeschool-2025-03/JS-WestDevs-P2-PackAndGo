@@ -1,70 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-
-interface Accomodation {
-  average_price: number;
-  description: string;
-  currency: string;
-  tips?: string;
-}
-interface AccomodationTest {
-  hostel: Accomodation;
-  budget_hotel: Accomodation;
-  midrange_hotel: Accomodation;
-  luxury_hotel: Accomodation;
-  local_food: Accomodation;
-}
-interface Transport {
-  types?: string[];
-  average_ticket?: number | string;
-  average_fare?: number;
-  average_price_per_day?: number;
-  currency: string;
-  description: string;
-  tips: string;
-}
-interface TransportAll {
-  public: Transport;
-  taxi: Transport;
-  bike_rental: Transport;
-}
-interface Food {
-  specialties: string[];
-  description: string;
-  tips: string;
-}
-interface Budget {
-  is_expensive: boolean;
-  daily_average: number;
-  currency: string;
-  notes: string;
-  tips: string;
-}
-interface Culture {
-  must_see: string[];
-  description: string;
-  tips: string;
-}
-interface Global {
-  accommodation: AccomodationTest;
-  local_food: Food;
-  transport: TransportAll;
-  culture: Culture;
-  budget: Budget;
-}
-interface City {
-  data: {
-    id: string;
-    attributes: {
-      name: string;
-      short_name: string;
-      realimage: string;
-      population?: number;
-      slug: string;
-      info: Global;
-    };
-  };
-}
+import "./TownDetail.css";
+import type { City } from "../../types/Town";
 
 function TownDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -164,10 +101,59 @@ function TownDetail() {
             {city.data.attributes.info.transport.public.types}{" "}
           </p>
           <br />
-          {/* <p> {city.data.attributes.info.transport.average_ticket}</p> */}
+          <p>
+            {" "}
+            {city.data.attributes.info.transport.public.average_ticket}{" "}
+            {city.data.attributes.info.transport.public.currency}
+          </p>
           <br />
 
-          <p> {city.data.attributes.info.local_food.tips}</p>
+          <p> {city.data.attributes.info.transport.public.description}</p>
+          <p> {city.data.attributes.info.transport.public.tips}</p>
+          <br />
+          <p>taxi average price</p>
+          <p>
+            {city.data.attributes.info.transport.taxi.average_fare}{" "}
+            {city.data.attributes.info.transport.taxi.currency}
+            <br />
+            <p>{city.data.attributes.info.transport.taxi.description}</p>
+            <p>{city.data.attributes.info.transport.taxi.tips}</p>
+          </p>
+          <br />
+          <p>taxi average price</p>
+          <p>
+            {
+              city.data.attributes.info.transport.bike_rental
+                .average_price_per_day
+            }{" "}
+            {city.data.attributes.info.transport.bike_rental.currency}
+            <br />
+            <p>{city.data.attributes.info.transport.bike_rental.description}</p>
+            <p>{city.data.attributes.info.transport.bike_rental.tips}</p>
+          </p>
+        </div>
+        <br />
+        <br />
+        <div>
+          <p>Culture : </p>
+          <br />
+          <p>{city.data.attributes.info.culture.must_see}</p>
+          <p>{city.data.attributes.info.culture.description}</p>
+          <p>{city.data.attributes.info.culture.tips}</p>
+        </div>
+        <br />
+        <br />
+        <div>
+          <p>Budget : </p>
+          <br />
+          <p>{city.data.attributes.info.budget.is_expensive}</p>
+          <p>
+            {city.data.attributes.info.budget.daily_average}
+
+            {city.data.attributes.info.budget.currency}
+          </p>
+          <p>{city.data.attributes.info.budget.notes}</p>
+          <p>{city.data.attributes.info.budget.tips}</p>
         </div>
       </div>
     </main>
