@@ -31,14 +31,16 @@ function TownDetail() {
         alt={city.data.attributes.name}
         className="town-detail-image"
       />
-      <div className="town-detail-info">
+      <section className="town-detail-info">
         <h2>Informations</h2>
         {city.data.attributes.population && (
           <p>Population : {city.data.attributes.population}</p>
         )}
-        <div>
+        <article>
+          {" "}
+          <br />
+          <h3>For budget hotel: </h3>
           <p>
-            For budget hotel:{" "}
             {city.data.attributes.info.accommodation.budget_hotel.average_price}{" "}
             {city.data.attributes.info.accommodation.budget_hotel.currency}
           </p>
@@ -46,20 +48,20 @@ function TownDetail() {
             {" "}
             {city.data.attributes.info.accommodation.budget_hotel.description}
           </p>
-        </div>
+        </article>
         <br />
-        <div>
+        <article>
+          <h3>For budget hostel classic:</h3>
           <p>
-            For budget hostel classic:{" "}
             {city.data.attributes.info.accommodation.hostel.average_price}{" "}
             {city.data.attributes.info.accommodation.hostel.currency}
           </p>
           <p> {city.data.attributes.info.accommodation.hostel.description}</p>
-        </div>
+        </article>
         <br />
-        <div>
+        <article>
+          <h3>For midrange hotel :</h3>
           <p>
-            For midrange hotel :{" "}
             {
               city.data.attributes.info.accommodation.midrange_hotel
                 .average_price
@@ -67,42 +69,39 @@ function TownDetail() {
             {city.data.attributes.info.accommodation.midrange_hotel.currency}
           </p>
           <p>
-            {" "}
             {city.data.attributes.info.accommodation.midrange_hotel.description}
           </p>
-        </div>
+        </article>
         <br />
-        <div>
+        <article>
+          <h3>For luxury hotel: </h3>
           <p>
-            For luxury hotel:{" "}
             {city.data.attributes.info.accommodation.luxury_hotel.average_price}{" "}
             {city.data.attributes.info.accommodation.luxury_hotel.currency}
           </p>
           <p>
-            {" "}
             {city.data.attributes.info.accommodation.luxury_hotel.description}
           </p>
-        </div>
+        </article>
         <br />
-        <div>
-          <p>Local food :</p>
+        <article>
+          <h3>Local food :</h3>
           <p>{city.data.attributes.info.local_food.specialties} </p>
           <br />
           <p> {city.data.attributes.info.local_food.description}</p>
           <br />
 
           <p> {city.data.attributes.info.local_food.tips}</p>
-        </div>
+        </article>
         <br />
-        <div>
-          <p>Transport :</p>
+        <article>
+          <h3>Transport :</h3>
           <p>
             Les différents moyen de transport:{" "}
-            {city.data.attributes.info.transport.public.types}{" "}
+            {city.data.attributes.info.transport.public.types}
           </p>
           <br />
           <p>
-            {" "}
             {city.data.attributes.info.transport.public.average_ticket}{" "}
             {city.data.attributes.info.transport.public.currency}
           </p>
@@ -111,7 +110,7 @@ function TownDetail() {
           <p> {city.data.attributes.info.transport.public.description}</p>
           <p> {city.data.attributes.info.transport.public.tips}</p>
           <br />
-          <p>taxi average price</p>
+          <h4>Taxi average price</h4>
           <p>
             {city.data.attributes.info.transport.taxi.average_fare}{" "}
             {city.data.attributes.info.transport.taxi.currency}
@@ -120,7 +119,7 @@ function TownDetail() {
             <p>{city.data.attributes.info.transport.taxi.tips}</p>
           </p>
           <br />
-          <p>taxi average price</p>
+          <h4>Taxi average price</h4>
           <p>
             {
               city.data.attributes.info.transport.bike_rental
@@ -131,20 +130,20 @@ function TownDetail() {
             <p>{city.data.attributes.info.transport.bike_rental.description}</p>
             <p>{city.data.attributes.info.transport.bike_rental.tips}</p>
           </p>
-        </div>
+        </article>
         <br />
         <br />
-        <div>
-          <p>Culture : </p>
+        <article>
+          <h3>Culture : </h3>
           <br />
           <p>{city.data.attributes.info.culture.must_see}</p>
           <p>{city.data.attributes.info.culture.description}</p>
           <p>{city.data.attributes.info.culture.tips}</p>
-        </div>
+        </article>
         <br />
         <br />
-        <div>
-          <p>Budget : </p>
+        <article>
+          <h3>Budget : </h3>
           <br />
           <p>{city.data.attributes.info.budget.is_expensive}</p>
           <p>
@@ -154,8 +153,8 @@ function TownDetail() {
           </p>
           <p>{city.data.attributes.info.budget.notes}</p>
           <p>{city.data.attributes.info.budget.tips}</p>
-        </div>
-      </div>
+        </article>
+      </section>
     </main>
   );
 }
