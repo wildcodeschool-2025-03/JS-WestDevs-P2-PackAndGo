@@ -40,8 +40,6 @@ function Town() {
           );
         })}
       </div>
-      {/* Test nombre de ville, censé être 5 à chaque fois sinon, il y a une erreur. */}
-      <p>{cities.length}</p>
     </main>
   );
 }
