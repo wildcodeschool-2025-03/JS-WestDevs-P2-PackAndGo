@@ -1,9 +1,18 @@
-.footer-container {
+footer {
   background-color: #ffb400;
   display: flex;
   justify-content: space-between;
   font-weight: 600;
-
+  min-height: 55px;
+  article {
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    p {
+      font-size: 0.8rem;
+      padding-left: 16px;
+    }
+  }
   .github-logo-left {
     width: 24px;
   }
@@ -12,33 +21,46 @@
     list-style: none;
     margin: 0;
     flex-wrap: wrap;
-    li {
-      padding: 1rem;
-      a {
-        text-decoration: none;
-        color: black;
-        img {
-          width: 24px;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+  li {
+    padding: 0 16px;
+    a {
+      text-decoration: none;
+      color: black;
+      img {
+        width: 24px;
+      }
+    }
+  }
+  .github-logo-right {
+    display: none;
+    width: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .github-logo-left {
+      display: none;
+    }
+    .github-logo-right {
+      display: block;
+    }
+    article {
+      p {
+        padding-left: 0;
+        font-size: 1rem;
+      }
+    }
+    ul {
+      font-size: 1rem;
+      li {
+        a {
+          img {
+            align-items: center;
+          }
         }
       }
     }
   }
-}
-.github-logo-right {
-  display: none;
-  width: 24px;
-}
-
-@media (min-width: 360px) {
-  .github-logo-left {
-    display: none;
-  }
-  .github-logo-right {
-    display: block;
-    margin-top: 1rem;
-    align-self: center;
-  }
-}
-article {
-  padding-left: 16px;
 }
