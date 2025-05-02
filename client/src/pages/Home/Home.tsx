@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import "./Home.css";
 
 function Home() {
@@ -13,9 +14,9 @@ function Home() {
             Laissez-vous guider vers des aventures inoubliables. Votre escapade
             commence ici !
           </p>
-          <a href="/" target="_blank" rel="noopener noreferrer">
+          <Link to="/countries" target="_blank" rel="noopener noreferrer">
             Explorer
-          </a>
+          </Link>
         </article>
       </section>
     </main>
