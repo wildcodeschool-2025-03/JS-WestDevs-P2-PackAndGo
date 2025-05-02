@@ -55,11 +55,11 @@ const router = createBrowserRouter([
         element: <Saved />,
       },
       {
-        path: "/town",
+        path: "/countries/:countryName",
         element: <Town />,
       },
       {
-        path: "/town/:slug",
+        path: "/countries/:countryName/:slug",
         element: <TownDetail />,
       },
     ], // The root path

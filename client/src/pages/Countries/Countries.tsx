@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 import "./Countries.css";
 import type CountryProp from "../../types/Countries";
 
@@ -40,6 +41,7 @@ function Countries() {
                   checked={favorites[element.id] || false}
                   onChange={() => toggleFavorite(element.id)}
                 />
+
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -57,13 +59,14 @@ function Countries() {
                 </svg>
               </label>
             </figcaption>
-
-            <img
-              className="image"
-              src={element.image}
-              alt={element.description}
-            />
-            <p>{element.tagline}</p>
+            <Link to={`/countries/${element.name.toLowerCase()}`}>
+              <img
+                className="image"
+                src={element.image}
+                alt={element.description}
+              />
+              <p>{element.tagline}</p>
+            </Link>
           </figure>
         </div>
       ))}
