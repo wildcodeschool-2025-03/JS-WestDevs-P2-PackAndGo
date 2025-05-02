@@ -28,7 +28,7 @@ function Town() {
   }, [countryName]);
 
   return (
-    <main>
+    <main className="town-main">
       <h1>{countryName}</h1>
       <div className="list-cities">
         {cities.map((city) => {
