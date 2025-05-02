@@ -1,4 +1,5 @@
 .save-main-container {
+  min-height: calc(100vh - 55px - 72px);
   h1 {
     font-size: 20px;
     margin-bottom: 16px;
