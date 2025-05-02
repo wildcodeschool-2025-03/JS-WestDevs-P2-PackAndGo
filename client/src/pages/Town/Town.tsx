@@ -1,7 +1,7 @@
 import "./Town.css";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
-import type City from "../../types/Town";
+import type { City } from "../../types/Town";
 
 function Town() {
   const [cities, setCities] = useState<City[]>([]);
@@ -44,8 +44,6 @@ function Town() {
           );
         })}
       </div>
-      {/* Test nombre de ville, censé être 5 à chaque fois sinon, il y a une erreur. */}
-      <p>{cities.length}</p>
     </main>
   );
 }
