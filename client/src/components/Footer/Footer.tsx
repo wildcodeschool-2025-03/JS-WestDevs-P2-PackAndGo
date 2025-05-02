@@ -3,12 +3,12 @@ function Footer() {
   return (
     <div className="footer-container">
       <article>
-        <p>The Adventurers of the lost code</p>
         <img
           className="github-logo-left"
           src="logo-github.svg"
           alt="GitHub logo"
         />
+        <p>The Adventurers of the lost code</p>
       </article>
       <ul>
         <li>
