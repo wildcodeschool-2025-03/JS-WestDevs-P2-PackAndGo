@@ -1,7 +1,7 @@
 import "./Footer.css";
 function Footer() {
   return (
-    <div className="footer-container">
+    <footer>
       <article>
         <img
           className="github-logo-left"
@@ -32,7 +32,7 @@ function Footer() {
           </a>
         </li>
       </ul>
-    </div>
+    </footer>
   );
 }
 export default Footer;

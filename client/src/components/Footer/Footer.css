@@ -1,4 +1,4 @@
-.footer-container {
+footer {
   background-color: #ffb400;
   display: flex;
   justify-content: space-between;
@@ -6,11 +6,10 @@
   min-height: 55px;
   article {
     display: flex;
-    /* flex-direction: column;
-    justify-content: center; */
     align-items: center;
+    padding-left: 12px;
     p {
-      font-size: 12px;
+      font-size: 0.8rem;
       padding-left: 16px;
     }
   }
@@ -23,7 +22,7 @@
     margin: 0;
     flex-wrap: wrap;
     align-items: center;
-    font-size: 12px;
+    font-size: 0.8rem;
   }
   li {
     padding: 0 16px;
@@ -46,11 +45,22 @@
     }
     .github-logo-right {
       display: block;
-      margin-top: 1rem;
-      align-self: center;
     }
-  }
-  article {
-    padding-left: 16px;
+    article {
+      p {
+        padding-left: 0;
+        font-size: 1rem;
+      }
+    }
+    ul {
+      font-size: 1rem;
+      li {
+        a {
+          img {
+            align-items: center;
+          }
+        }
+      }
+    }
   }
 }

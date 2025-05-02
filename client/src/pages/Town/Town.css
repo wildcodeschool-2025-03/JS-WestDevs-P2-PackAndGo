@@ -1,11 +1,12 @@
-.list-cities {
-  display: grid;
-  gap: 20px;
-  img {
-    height: 300px;
-    width: 400px;
-  }
-}
 .town-main {
-  min-height: calc(100vh - 55.453px - 72px);
+  min-height: calc(100vh - 55px - 55px);
+
+  .list-cities {
+    display: grid;
+    gap: 20px;
+    img {
+      height: 300px;
+      width: 400px;
+    }
+  }
 }
