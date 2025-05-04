@@ -64,3 +64,6 @@ interface Data {
 export interface City {
   data: Data;
 }
+export interface ObjectDetail {
+  city: City;
+}
