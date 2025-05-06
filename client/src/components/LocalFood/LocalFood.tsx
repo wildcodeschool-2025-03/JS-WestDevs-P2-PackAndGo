@@ -1,7 +1,7 @@
 import { useState } from "react";
-import type { ObjectDetail } from "../../types/Town";
+import type { LocalFoodProps } from "../../types/Town";
 
-function LocalFood({ city }: ObjectDetail) {
+function LocalFood({ food }: LocalFoodProps) {
   const [isOpen, setIsOpen] = useState(false);
   const handleChange = () => setIsOpen(!isOpen);
 
@@ -13,11 +13,11 @@ function LocalFood({ city }: ObjectDetail) {
       {isOpen && (
         <article>
           <h3>Local food :</h3>
-          <p>{city.data.attributes.info.local_food.specialties} </p>
+          <p>{food.specialties} </p>
 
-          <p> {city.data.attributes.info.local_food.description}</p>
+          <p> {food.description}</p>
 
-          <p> {city.data.attributes.info.local_food.tips}</p>
+          <p> {food.tips}</p>
         </article>
       )}
     </>

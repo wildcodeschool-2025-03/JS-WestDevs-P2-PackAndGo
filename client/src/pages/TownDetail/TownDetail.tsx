@@ -40,11 +40,20 @@ function TownDetail() {
         {city.data.attributes.population && (
           <p>Population : {city.data.attributes.population}</p>
         )}
-        <HotelBudget city={city} />
-        <LocalFood city={city} />
-        <TransportBudget city={city} />
-        <CultureDetail city={city} />
-        <GlobalBudgetDetail city={city} />²
+        <HotelBudget
+          budgetEcoHotel={city.data.attributes.info.accommodation.budget_hotel}
+          classicHotel={city.data.attributes.info.accommodation.hostel}
+          midRangeHotel={city.data.attributes.info.accommodation.midrange_hotel}
+          luxuryHotel={city.data.attributes.info.accommodation.luxury_hotel}
+        />
+        <LocalFood food={city.data.attributes.info.local_food} />
+        <TransportBudget
+          publicTransport={city.data.attributes.info.transport.public}
+          taxi={city.data.attributes.info.transport.taxi}
+          bikeRental={city.data.attributes.info.transport.bike_rental}
+        />
+        <CultureDetail culture={city.data.attributes.info.culture} />
+        <GlobalBudgetDetail budget={city.data.attributes.info.budget} />
       </section>
     </main>
   );

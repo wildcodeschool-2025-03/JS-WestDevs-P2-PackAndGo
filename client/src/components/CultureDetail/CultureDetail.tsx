@@ -1,7 +1,7 @@
 import { useState } from "react";
-import type { ObjectDetail } from "../../types/Town";
+import type { CultureDetailProps } from "../../types/Town";
 
-function CultureDetail({ city }: ObjectDetail) {
+function CultureDetail({ culture }: CultureDetailProps) {
   const [isOpen, setIsOpen] = useState(false);
   const handleChange = () => setIsOpen(!isOpen);
   return (
@@ -13,9 +13,9 @@ function CultureDetail({ city }: ObjectDetail) {
         <article>
           <h3>Culture : </h3>
 
-          <p>{city.data.attributes.info.culture.must_see}</p>
-          <p>{city.data.attributes.info.culture.description}</p>
-          <p>{city.data.attributes.info.culture.tips}</p>
+          <p>{culture.must_see}</p>
+          <p>{culture.description}</p>
+          <p>{culture.tips}</p>
         </article>
       )}
     </>

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import type { ObjectDetail } from "../../types/Town";
+import type { GlobalBudgetProps } from "../../types/Town";
 
-function GlobalBudgetDetail({ city }: ObjectDetail) {
+function GlobalBudgetDetail({ budget }: GlobalBudgetProps) {
   const [isOpen, setIsOpen] = useState(false);
   const handleChange = () => setIsOpen(!isOpen);
   return (
@@ -13,14 +13,14 @@ function GlobalBudgetDetail({ city }: ObjectDetail) {
         <article>
           <h3>Budget : </h3>
 
-          <p>{city.data.attributes.info.budget.is_expensive}</p>
+          <p>{budget.is_expensive}</p>
           <p>
-            {city.data.attributes.info.budget.daily_average}
+            {budget.daily_average}
 
-            {city.data.attributes.info.budget.currency}
+            {budget.currency}
           </p>
-          <p>{city.data.attributes.info.budget.notes}</p>
-          <p>{city.data.attributes.info.budget.tips}</p>
+          <p>{budget.notes}</p>
+          <p>{budget.tips}</p>
         </article>
       )}
     </>

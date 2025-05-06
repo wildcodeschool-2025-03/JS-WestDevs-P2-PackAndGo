@@ -1,7 +1,11 @@
 import { useState } from "react";
-import type { ObjectDetail } from "../../types/Town";
+import type { TransportBudgetProps } from "../../types/Town";
 
-function TransportBudget({ city }: ObjectDetail) {
+function TransportBudget({
+  publicTransport,
+  taxi,
+  bikeRental,
+}: TransportBudgetProps) {
   const [isOpen, setIsOpen] = useState(false);
   const handleChange = () => setIsOpen(!isOpen);
   return (
@@ -12,37 +16,28 @@ function TransportBudget({ city }: ObjectDetail) {
       {isOpen && (
         <article>
           <h3>Transport :</h3>
-          <p>
-            Les différents moyen de transport:{" "}
-            {city.data.attributes.info.transport.public.types}
-          </p>
+          <p>Les différents moyen de transport: {publicTransport.types}</p>
 
           <p>
-            {city.data.attributes.info.transport.public.average_ticket}{" "}
-            {city.data.attributes.info.transport.public.currency}
+            {publicTransport.average_ticket} {publicTransport.currency}
           </p>
 
-          <p> {city.data.attributes.info.transport.public.description}</p>
-          <p> {city.data.attributes.info.transport.public.tips}</p>
+          <p> {publicTransport.description}</p>
+          <p> {publicTransport.tips}</p>
 
           <h4>Taxi average price</h4>
           <p>
-            {city.data.attributes.info.transport.taxi.average_fare}{" "}
-            {city.data.attributes.info.transport.taxi.currency}
+            {taxi.average_fare} {taxi.currency}
           </p>
-          <p>{city.data.attributes.info.transport.taxi.description}</p>
-          <p>{city.data.attributes.info.transport.taxi.tips}</p>
+          <p>{taxi.description}</p>
+          <p>{taxi.tips}</p>
 
           <h4>Bike average price</h4>
           <p>
-            {
-              city.data.attributes.info.transport.bike_rental
-                .average_price_per_day
-            }{" "}
-            {city.data.attributes.info.transport.bike_rental.currency}
+            {bikeRental.average_price_per_day} {bikeRental.currency}
           </p>
-          <p>{city.data.attributes.info.transport.bike_rental.description}</p>
-          <p>{city.data.attributes.info.transport.bike_rental.tips}</p>
+          <p>{bikeRental.description}</p>
+          <p>{bikeRental.tips}</p>
         </article>
       )}
     </>
