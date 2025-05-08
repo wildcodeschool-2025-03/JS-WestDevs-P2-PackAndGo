@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useHandleModal from "../../hooks/useHandleModal";
 import type { HotelBudgetProps } from "../../types/Town";
 
 function HotelBudget({
@@ -7,12 +8,12 @@ function HotelBudget({
   midRangeHotel,
   luxuryHotel,
 }: HotelBudgetProps) {
+  const { handleChange } = useHandleModal();
   const [isOpen, setIsOpen] = useState(false);
-  const handleChange = () => setIsOpen(!isOpen);
 
   return (
     <>
-      <button type="button" onClick={handleChange}>
+      <button type="button" onClick={() => handleChange(setIsOpen, isOpen)}>
         Budget for hotel
       </button>
       {isOpen && (

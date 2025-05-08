@@ -1,12 +1,14 @@
 import { useState } from "react";
+import useHandleModal from "../../hooks/useHandleModal";
 import type { GlobalBudgetProps } from "../../types/Town";
 
 function GlobalBudgetDetail({ budget }: GlobalBudgetProps) {
+  const { handleChange } = useHandleModal();
   const [isOpen, setIsOpen] = useState(false);
-  const handleChange = () => setIsOpen(!isOpen);
+
   return (
     <>
-      <button type="button" onClick={handleChange}>
+      <button type="button" onClick={() => handleChange(setIsOpen, isOpen)}>
         Global budget
       </button>
       {isOpen && (

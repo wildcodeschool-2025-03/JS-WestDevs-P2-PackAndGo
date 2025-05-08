@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useHandleModal from "../../hooks/useHandleModal";
 import type { TransportBudgetProps } from "../../types/Town";
 
 function TransportBudget({
@@ -6,11 +7,12 @@ function TransportBudget({
   taxi,
   bikeRental,
 }: TransportBudgetProps) {
-  const [isOpen, setIsOpen] = useState(false);
-  const handleChange = () => setIsOpen(!isOpen);
+  const { handleChange } = useHandleModal();
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
     <>
-      <button type="button" onClick={handleChange}>
+      <button type="button" onClick={() => handleChange(setIsOpen, isOpen)}>
         Different transport
       </button>
       {isOpen && (

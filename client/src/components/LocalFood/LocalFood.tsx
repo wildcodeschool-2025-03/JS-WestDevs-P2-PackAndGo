@@ -1,13 +1,14 @@
 import { useState } from "react";
+import useHandleModal from "../../hooks/useHandleModal";
 import type { LocalFoodProps } from "../../types/Town";
 
 function LocalFood({ food }: LocalFoodProps) {
+  const { handleChange } = useHandleModal();
   const [isOpen, setIsOpen] = useState(false);
-  const handleChange = () => setIsOpen(!isOpen);
 
   return (
     <>
-      <button type="button" onClick={handleChange}>
+      <button type="button" onClick={() => handleChange(setIsOpen, isOpen)}>
         Local food
       </button>
       {isOpen && (
