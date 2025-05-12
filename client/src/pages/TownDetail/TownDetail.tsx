@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import "./TownDetail.css";
+import CultureDetail from "../../components/CultureDetail/CultureDetail";
+import GlobalBudgetDetail from "../../components/GlobalBudgetDetail/GlobalBudgetDetail";
+import HotelBudget from "../../components/HotelBudget/HotelBudget";
+import LocalFood from "../../components/LocalFood/LocalFood";
+import TransportBudget from "../../components/TransportBudget/TransportBudget";
 import type { City } from "../../types/Town";
 
 function TownDetail() {
   const { slug } = useParams<{ slug: string }>();
   const [city, setCity] = useState<City>();
-
   useEffect(() => {
     fetch("http://localhost:3310/api/cities")
       .then((response) => response.json())
@@ -36,114 +40,20 @@ function TownDetail() {
         {city.data.attributes.population && (
           <p>Population : {city.data.attributes.population}</p>
         )}
-        <article>
-          <h3>For budget hotel: </h3>
-          <p>
-            {city.data.attributes.info.accommodation.budget_hotel.average_price}{" "}
-            {city.data.attributes.info.accommodation.budget_hotel.currency}
-          </p>
-          <p>
-            {city.data.attributes.info.accommodation.budget_hotel.description}
-          </p>
-        </article>
-
-        <article>
-          <h3>For budget hostel classic:</h3>
-          <p>
-            {city.data.attributes.info.accommodation.hostel.average_price}{" "}
-            {city.data.attributes.info.accommodation.hostel.currency}
-          </p>
-          <p> {city.data.attributes.info.accommodation.hostel.description}</p>
-        </article>
-
-        <article>
-          <h3>For midrange hotel :</h3>
-          <p>
-            {
-              city.data.attributes.info.accommodation.midrange_hotel
-                .average_price
-            }{" "}
-            {city.data.attributes.info.accommodation.midrange_hotel.currency}
-          </p>
-          <p>
-            {city.data.attributes.info.accommodation.midrange_hotel.description}
-          </p>
-        </article>
-
-        <article>
-          <h3>For luxury hotel: </h3>
-          <p>
-            {city.data.attributes.info.accommodation.luxury_hotel.average_price}{" "}
-            {city.data.attributes.info.accommodation.luxury_hotel.currency}
-          </p>
-          <p>
-            {city.data.attributes.info.accommodation.luxury_hotel.description}
-          </p>
-        </article>
-        <article>
-          <h3>Local food :</h3>
-          <p>{city.data.attributes.info.local_food.specialties} </p>
-
-          <p> {city.data.attributes.info.local_food.description}</p>
-
-          <p> {city.data.attributes.info.local_food.tips}</p>
-        </article>
-
-        <article>
-          <h3>Transport :</h3>
-          <p>
-            Les différents moyen de transport:{" "}
-            {city.data.attributes.info.transport.public.types}
-          </p>
-
-          <p>
-            {city.data.attributes.info.transport.public.average_ticket}{" "}
-            {city.data.attributes.info.transport.public.currency}
-          </p>
-
-          <p> {city.data.attributes.info.transport.public.description}</p>
-          <p> {city.data.attributes.info.transport.public.tips}</p>
-
-          <h4>Taxi average price</h4>
-          <p>
-            {city.data.attributes.info.transport.taxi.average_fare}{" "}
-            {city.data.attributes.info.transport.taxi.currency}
-            <p>{city.data.attributes.info.transport.taxi.description}</p>
-            <p>{city.data.attributes.info.transport.taxi.tips}</p>
-          </p>
-
-          <h4>Taxi average price</h4>
-          <p>
-            {
-              city.data.attributes.info.transport.bike_rental
-                .average_price_per_day
-            }{" "}
-            {city.data.attributes.info.transport.bike_rental.currency}
-            <p>{city.data.attributes.info.transport.bike_rental.description}</p>
-            <p>{city.data.attributes.info.transport.bike_rental.tips}</p>
-          </p>
-        </article>
-
-        <article>
-          <h3>Culture : </h3>
-
-          <p>{city.data.attributes.info.culture.must_see}</p>
-          <p>{city.data.attributes.info.culture.description}</p>
-          <p>{city.data.attributes.info.culture.tips}</p>
-        </article>
-
-        <article>
-          <h3>Budget : </h3>
-
-          <p>{city.data.attributes.info.budget.is_expensive}</p>
-          <p>
-            {city.data.attributes.info.budget.daily_average}
-
-            {city.data.attributes.info.budget.currency}
-          </p>
-          <p>{city.data.attributes.info.budget.notes}</p>
-          <p>{city.data.attributes.info.budget.tips}</p>
-        </article>
+        <HotelBudget
+          budgetEcoHotel={city.data.attributes.info.accommodation.budget_hotel}
+          classicHotel={city.data.attributes.info.accommodation.hostel}
+          midRangeHotel={city.data.attributes.info.accommodation.midrange_hotel}
+          luxuryHotel={city.data.attributes.info.accommodation.luxury_hotel}
+        />
+        <LocalFood food={city.data.attributes.info.local_food} />
+        <TransportBudget
+          publicTransport={city.data.attributes.info.transport.public}
+          taxi={city.data.attributes.info.transport.taxi}
+          bikeRental={city.data.attributes.info.transport.bike_rental}
+        />
+        <CultureDetail culture={city.data.attributes.info.culture} />
+        <GlobalBudgetDetail budget={city.data.attributes.info.budget} />
       </section>
     </main>
   );
