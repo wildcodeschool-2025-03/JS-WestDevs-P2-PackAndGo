@@ -14,7 +14,7 @@
 /* Nesting css */
 .home-main-container {
   position: relative;
-  min-height: calc(100vh - 55.458px - 72px);
+  min-height: calc(100vh - 55px - 55px);
   background-image: url(../../../public/background-homepage.jpg);
   background-repeat: no-repeat;
   background-position: center;

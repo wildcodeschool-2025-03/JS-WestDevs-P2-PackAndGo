@@ -1,5 +1,5 @@
 .town-detail-main {
-  min-height: calc(100vh - 55px - 72px);
+  min-height: calc(100vh - 55px - 55px);
   img {
     width: 100%;
   }

@@ -38,8 +38,8 @@ function Town() {
               key={city.data.id}
               className="city-item"
             >
-              <h2>{city.data.attributes.short_name}</h2>
               <img src={city.data.attributes.realimage} alt="test" />
+              <h2>{city.data.attributes.short_name}</h2>
             </Link>
           );
         })}

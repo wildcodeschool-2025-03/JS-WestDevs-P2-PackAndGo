@@ -1,11 +1,32 @@
-.list-cities {
-  display: grid;
-  gap: 20px;
-  img {
-    height: 300px;
-    width: 400px;
-  }
-}
 .town-main {
-  min-height: calc(100vh - 55.453px - 72px);
+  min-height: calc(100vh - 55px - 55px);
+  text-align: center;
+  background-color: #fff8f3;
+  h1 {
+    padding: 16px 0;
+  }
+  .list-cities {
+    display: grid;
+    gap: 80px;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    a:last-child {
+      margin-bottom: 64px;
+    }
+    img {
+      height: 100%;
+      width: 90%;
+      border-radius: 24px;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    .list-cities {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    h1 {
+      padding-bottom: 64px;
+    }
+  }
 }

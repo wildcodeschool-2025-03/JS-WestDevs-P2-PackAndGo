@@ -1,14 +1,14 @@
 import "./Footer.css";
 function Footer() {
   return (
-    <div className="footer-container">
+    <footer>
       <article>
-        <p>The Adventurers of the lost code</p>
         <img
           className="github-logo-left"
           src="logo-github.svg"
           alt="GitHub logo"
         />
+        <p>The Adventurers of the lost code</p>
       </article>
       <ul>
         <li>
@@ -32,7 +32,7 @@ function Footer() {
           </a>
         </li>
       </ul>
-    </div>
+    </footer>
   );
 }
 export default Footer;
