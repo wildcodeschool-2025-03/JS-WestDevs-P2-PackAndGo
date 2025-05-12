@@ -272,15 +272,10 @@
     width: 90%;
     max-width: 700px;
     transition: 0.25s ease;
-    /* display: flex;
-    justify-content: center; */
     padding-top: 24px;
     padding-bottom: 24px;
     margin-left: 48px;
     margin-right: 48px;
-    /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    margin-bottom: 48px;
-    background-color: white; */
   }
 }
 @media (max-width: 768px) {
