@@ -13,11 +13,52 @@ function Countries() {
       .then((data) => setCountriesList(data.results));
   }, []);
 
-  const toggleFavorite = (id: number) => {
-    setFavorites((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
+  useEffect(() => {
+    const storedFavorites = getStorage();
+    if (storedFavorites) {
+      const favoritesMap: Record<number, boolean> = {};
+
+      for (const fav of storedFavorites) {
+        favoritesMap[fav.id] = true;
+      }
+
+      setFavorites(favoritesMap);
+    }
+  }, []);
+
+  function getStorage(): CountryProp[] {
+    const actualStorage = localStorage.getItem("favoriteCountry");
+    return actualStorage ? JSON.parse(actualStorage) : [];
+  }
+
+  function setStorage(favoriteCountry: CountryProp) {
+    const actualStorage = getStorage();
+
+    if (
+      !actualStorage.some((fav: CountryProp) => fav.id === favoriteCountry.id)
+    ) {
+      actualStorage.push(favoriteCountry);
+    }
+
+    localStorage.setItem("favoriteCountry", JSON.stringify(actualStorage));
+  }
+
+  const toggleFavorite = (country: CountryProp) => {
+    setFavorites((prev) => {
+      const updatedFavorites = { ...prev, [country.id]: !prev[country.id] };
+
+      if (updatedFavorites[country.id]) {
+        setStorage(country);
+      } else {
+        const actualStorage = getStorage();
+        const updatedStorage = actualStorage.filter(
+          (fav) => fav.id !== country.id,
+        );
+        localStorage.setItem("favoriteCountry", JSON.stringify(updatedStorage));
+      }
+
+      return updatedFavorites;
+    });
   };
 
   return (
@@ -39,9 +80,8 @@ function Countries() {
                   name="favorite-checkbox"
                   value="favorite-button"
                   checked={favorites[element.id] || false}
-                  onChange={() => toggleFavorite(element.id)}
+                  onChange={() => toggleFavorite(element)}
                 />
-
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
