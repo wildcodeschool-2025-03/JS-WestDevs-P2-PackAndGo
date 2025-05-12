@@ -4,23 +4,44 @@
     font-size: 20px;
     margin-bottom: 16px;
     text-align: center;
-    padding: 16px 0 0 0;
+    padding: 80px 0 32px 0;
+    color: rgba(0, 0, 0, 0.6);
+    text-shadow: 0 0 10px #f39d3c, 0 0 20px #ffa500, 0 0 30px #d4513a;
   }
+  background-color: rgba(255, 232, 203, 0.5);
 
   .travels-list {
     display: grid;
     gap: 16px;
+    padding-left: 48px;
+    padding-right: 48px;
   }
 
   .travel-card {
     border-radius: 12px;
     margin: 0 8px 0 8px;
+    padding: 24px;
   }
 
   .travel-image {
     width: 100%;
+    height: auto;
+    border: 1.5px solid;
+    background-color: #eee;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+    position: relative;
+    border-radius: 5%;
+    box-shadow: rgb(38, 57, 77) 0px 20px 10px -10px;
   }
 
+  figcaption {
+    padding-top: 28px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.6);
+    text-shadow: 0 0 10px #f39d3c, 0 0 20px #ffa500, 0 0 30px #d4513a;
+  }
   .btn-delete {
     background: transparent;
     border: none;
@@ -34,7 +55,7 @@
   }
 
   .icone-deleted {
-    width: 20px;
+    width: 40px;
   }
 
   .connect-button {
@@ -46,11 +67,12 @@
     padding: 0.5rem;
     cursor: pointer;
     color: black;
+    font-weight: bold;
   }
 
   .connect {
-    margin: 20px auto;
     text-align: center;
+    padding: 32px 0;
   }
 }
 @media screen and (min-width: 768px) {

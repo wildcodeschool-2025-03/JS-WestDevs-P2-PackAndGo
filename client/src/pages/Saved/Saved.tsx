@@ -1,19 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Saved.css";
 import { Link } from "react-router";
+import type CountryProp from "../../types/Countries";
+
+function getSavedFavorites(): CountryProp[] {
+  const savedData = localStorage.getItem("favoriteCountry");
+  return savedData ? JSON.parse(savedData) : [];
+}
 
 function Saved() {
-  const [travels, setTravels] = useState([
-    { id: 1, name: "Japon", image: "/Japon.png" },
-    { id: 2, name: "Vietnam", image: "/Vietnam.png" },
-    { id: 3, name: "Sénégal", image: "/Senegal.png" },
-    { id: 4, name: "Turquie", image: "/Turquie.png" },
-    { id: 5, name: "Canada", image: "/Canada.png" },
-    { id: 6, name: "France", image: "/France.png" },
-  ]);
+  const [travels, setTravels] = useState<CountryProp[]>([]);
+
+  useEffect(() => {
+    setTravels(getSavedFavorites());
+  }, []);
 
   const deleteTrip = (id: number) => {
-    setTravels(travels.filter((v) => v.id !== id));
+    const updatedTravels = travels.filter((v) => v.id !== id);
+    setTravels(updatedTravels);
+
+    localStorage.setItem("favoriteCountry", JSON.stringify(updatedTravels));
   };
 
   return (
