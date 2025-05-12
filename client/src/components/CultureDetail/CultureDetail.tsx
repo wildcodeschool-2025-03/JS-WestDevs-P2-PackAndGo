@@ -7,8 +7,9 @@ function CultureDetail({ culture }: CultureDetailProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
+    <main className="component-detail-button-container">
       <button type="button" onClick={() => handleChange(setIsOpen, isOpen)}>
+        <img src="/cultures.png" alt="" />
         Culture
       </button>
       {isOpen && (
@@ -20,7 +21,7 @@ function CultureDetail({ culture }: CultureDetailProps) {
           <p>{culture.tips}</p>
         </article>
       )}
-    </>
+    </main>
   );
 }
 export default CultureDetail;

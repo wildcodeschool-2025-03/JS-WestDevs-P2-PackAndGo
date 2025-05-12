@@ -3,4 +3,26 @@
   img {
     width: 100%;
   }
+  .town-detail-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+/* Button + texte qui s'affiche sur le côté  */
+.component-detail-button-container {
+  display: flex;
+  gap: 24px;
+  button {
+    display: flex;
+    width: 100px;
+    height: 50px;
+    background-color: #f4d1d1;
+    border: none;
+    padding: 16px;
+    flex-shrink: 0;
+  }
+  img {
+    width: 20px;
+  }
 }

@@ -11,8 +11,9 @@ function TransportBudget({
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <>
+    <main className="component-detail-button-container">
       <button type="button" onClick={() => handleChange(setIsOpen, isOpen)}>
+        <img src="/transports.png" alt="emoji bus" />
         Different transport
       </button>
       {isOpen && (
@@ -42,7 +43,7 @@ function TransportBudget({
           <p>{bikeRental.tips}</p>
         </article>
       )}
-    </>
+    </main>
   );
 }
 export default TransportBudget;

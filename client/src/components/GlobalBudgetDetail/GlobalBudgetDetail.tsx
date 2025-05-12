@@ -7,8 +7,9 @@ function GlobalBudgetDetail({ budget }: GlobalBudgetProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
+    <main className="component-detail-button-container">
       <button type="button" onClick={() => handleChange(setIsOpen, isOpen)}>
+        <img src="/global-budget.png" alt="" />
         Global budget
       </button>
       {isOpen && (
@@ -25,7 +26,7 @@ function GlobalBudgetDetail({ budget }: GlobalBudgetProps) {
           <p>{budget.tips}</p>
         </article>
       )}
-    </>
+    </main>
   );
 }
 export default GlobalBudgetDetail;
