@@ -11,18 +11,11 @@ import type { City } from "../../types/Town";
 function TownDetail() {
   const { slug } = useParams<{ slug: string }>();
   const [city, setCity] = useState<City>();
+
   useEffect(() => {
-    fetch("http://localhost:3310/api/cities")
-      .then((response) => response.json())
-      .then((data: City[]) => {
-        const exactCity = data.find(
-          (city) => city.data.attributes.slug === slug,
-        );
-        setCity(exactCity);
-      })
-      .catch((error) => {
-        console.error("Erreur lors du chargement:", error);
-      });
+    fetch(`http://localhost:3310/api/cities/${slug}`)
+      .then((res) => res.json())
+      .then((data) => setCity(data));
   }, [slug]);
 
   if (!city) return <h1>Ville non trouvée</h1>;
