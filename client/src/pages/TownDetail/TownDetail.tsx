@@ -6,6 +6,7 @@ import GlobalBudgetDetail from "../../components/GlobalBudgetDetail/GlobalBudget
 import HotelBudget from "../../components/HotelBudget/HotelBudget";
 import LocalFood from "../../components/LocalFood/LocalFood";
 import TransportBudget from "../../components/TransportBudget/TransportBudget";
+import Weather from "../../components/Weather/Weather";
 import type { City } from "../../types/Town";
 
 function TownDetail() {
@@ -54,6 +55,10 @@ function TownDetail() {
         />
         <CultureDetail culture={city.data.attributes.info.culture} />
         <GlobalBudgetDetail budget={city.data.attributes.info.budget} />
+        <Weather
+          lat={city.data.attributes.latitude}
+          lon={city.data.attributes.longitude}
+        />
       </section>
     </main>
   );
