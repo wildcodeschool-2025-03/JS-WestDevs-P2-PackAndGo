@@ -27,6 +27,9 @@ function TownDetail() {
 
   if (!city) return <h1>Ville non trouvée</h1>;
 
+  const { accommodation, transport, budget, culture, local_food } =
+    city.data.attributes.info;
+
   return (
     <main className="town-detail-main">
       <h1>{city.data.attributes.name}</h1>
@@ -41,19 +44,19 @@ function TownDetail() {
           <p>Population : {city.data.attributes.population}</p>
         )}
         <HotelBudget
-          budgetEcoHotel={city.data.attributes.info.accommodation.budget_hotel}
-          classicHotel={city.data.attributes.info.accommodation.hostel}
-          midRangeHotel={city.data.attributes.info.accommodation.midrange_hotel}
-          luxuryHotel={city.data.attributes.info.accommodation.luxury_hotel}
+          budgetEcoHotel={accommodation.budget_hotel}
+          classicHotel={accommodation.hostel}
+          midRangeHotel={accommodation.midrange_hotel}
+          luxuryHotel={accommodation.luxury_hotel}
         />
-        <LocalFood food={city.data.attributes.info.local_food} />
+        <LocalFood food={local_food} />
         <TransportBudget
-          publicTransport={city.data.attributes.info.transport.public}
-          taxi={city.data.attributes.info.transport.taxi}
-          bikeRental={city.data.attributes.info.transport.bike_rental}
+          publicTransport={transport.public}
+          taxi={transport.taxi}
+          bikeRental={transport.bike_rental}
         />
-        <CultureDetail culture={city.data.attributes.info.culture} />
-        <GlobalBudgetDetail budget={city.data.attributes.info.budget} />
+        <CultureDetail culture={culture} />
+        <GlobalBudgetDetail budget={budget} />
       </section>
     </main>
   );
