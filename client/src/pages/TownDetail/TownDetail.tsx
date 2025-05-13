@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import "./TownDetail.css";
 import CultureDetail from "../../components/CultureDetail/CultureDetail";
 import GlobalBudgetDetail from "../../components/GlobalBudgetDetail/GlobalBudgetDetail";
@@ -9,7 +9,11 @@ import TransportBudget from "../../components/TransportBudget/TransportBudget";
 import type { City } from "../../types/Town";
 
 function TownDetail() {
-  const { slug } = useParams<{ slug: string }>();
+  const { slug, countryName } = useParams<{
+    slug: string;
+    countryName: string;
+  }>();
+  const navigate = useNavigate();
   const [city, setCity] = useState<City>();
   useEffect(() => {
     fetch("http://localhost:3310/api/cities")
@@ -30,6 +34,21 @@ function TownDetail() {
   return (
     <main className="town-detail-main">
       <h1>{city.data.attributes.name}</h1>
+      <button
+        type="button"
+        className="btn"
+        onClick={() => navigate(`/countries/${countryName}`)}
+      >
+        <strong>PRECEDENT</strong>
+        <div id="container-stars">
+          <div id="stars" />
+        </div>
+        <div id="glow">
+          <div className="circle" />
+          <div className="circle" />
+        </div>
+      </button>
+
       <img
         src={city.data.attributes.realimage}
         alt={city.data.attributes.name}
