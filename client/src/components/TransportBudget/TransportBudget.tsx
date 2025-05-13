@@ -1,5 +1,3 @@
-import { useState } from "react";
-import useHandleModal from "../../hooks/useHandleModal";
 import type { TransportBudgetProps } from "../../types/Town";
 
 function TransportBudget({
@@ -7,42 +5,35 @@ function TransportBudget({
   taxi,
   bikeRental,
 }: TransportBudgetProps) {
-  const { handleChange } = useHandleModal();
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
   return (
     <main className="component-detail-button-container">
-      <button type="button" onClick={() => handleChange(setIsOpen, isOpen)}>
-        <img src="/transports.png" alt="emoji bus" />
-        Different transport
-      </button>
-      {isOpen && (
-        <article>
-          <h3>Transport :</h3>
-          <p>Les différents moyen de transport: {publicTransport.types}</p>
+      <article>
+        <h3>Transport :</h3>
+        <p>Les différents moyen de transport: {publicTransport.types}</p>
 
-          <p>
-            {publicTransport.average_ticket} {publicTransport.currency}
-          </p>
+        <p>
+          {publicTransport.average_ticket} {publicTransport.currency}
+        </p>
 
-          <p> {publicTransport.description}</p>
-          <p> {publicTransport.tips}</p>
-
-          <h4>Taxi average price</h4>
-          <p>
-            {taxi.average_fare} {taxi.currency}
-          </p>
-          <p>{taxi.description}</p>
-          <p>{taxi.tips}</p>
-
-          <h4>Bike average price</h4>
-          <p>
-            {bikeRental.average_price_per_day} {bikeRental.currency}
-          </p>
-          <p>{bikeRental.description}</p>
-          <p>{bikeRental.tips}</p>
-        </article>
-      )}
+        <p> {publicTransport.description}</p>
+        <p> {publicTransport.tips}</p>
+      </article>
+      <article>
+        <h4>Taxi average price</h4>
+        <p>
+          {taxi.average_fare} {taxi.currency}
+        </p>
+        <p>{taxi.description}</p>
+        <p>{taxi.tips}</p>
+      </article>
+      <article>
+        <h4>Bike average price</h4>
+        <p>
+          {bikeRental.average_price_per_day} {bikeRental.currency}
+        </p>
+        <p>{bikeRental.description}</p>
+        <p>{bikeRental.tips}</p>
+      </article>
     </main>
   );
 }
