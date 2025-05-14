@@ -8,7 +8,7 @@ function TransportBudget({
   return (
     <main className="component-detail-button-container">
       <article>
-        <h3>Transport :</h3>
+        <h3>Transports</h3>
         <p>Les différents moyen de transport: {publicTransport.types}</p>
 
         <p>
@@ -19,7 +19,7 @@ function TransportBudget({
         <p> {publicTransport.tips}</p>
       </article>
       <article>
-        <h4>Taxi average price</h4>
+        <h4>Taxi</h4>
         <p>
           {taxi.average_fare} {taxi.currency}
         </p>
@@ -27,7 +27,7 @@ function TransportBudget({
         <p>{taxi.tips}</p>
       </article>
       <article>
-        <h4>Bike average price</h4>
+        <h4>Vélo</h4>
         <p>
           {bikeRental.average_price_per_day} {bikeRental.currency}
         </p>

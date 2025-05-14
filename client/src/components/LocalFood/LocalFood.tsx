@@ -6,8 +6,9 @@ function LocalFood({ food }: LocalFoodProps) {
     <main className="component-detail-button-container">
       <article>
         <h3>Local food :</h3>
-        <p>{food.specialties} </p>
-
+        {food.specialties.map((food) => (
+          <span key={food}> {food}</span>
+        ))}
         <p> {food.description}</p>
 
         <p> {food.tips}</p>
