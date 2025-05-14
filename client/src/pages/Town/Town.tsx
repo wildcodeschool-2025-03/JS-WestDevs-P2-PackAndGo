@@ -1,12 +1,11 @@
 import "./Town.css";
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import type { City } from "../../types/Town";
 import "../button.css";
 function Town() {
   const [cities, setCities] = useState<City[]>([]);
   const { countryName } = useParams();
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:3310/api/cities")
@@ -31,20 +30,18 @@ function Town() {
   return (
     <main className="town-main">
       <h1>{countryName}</h1>
-      <button
-        type="button"
-        className="btn"
-        onClick={() => navigate("/countries")}
-      >
-        <strong>PRECEDENT</strong>
-        <div id="container-stars">
-          <div id="stars" />
-        </div>
-        <div id="glow">
-          <div className="circle" />
-          <div className="circle" />
-        </div>
-      </button>
+      <Link to="/countries">
+        <button type="button" className="btn-town">
+          <strong>PRECEDENT</strong>
+          <div id="container-stars">
+            <div id="stars" />
+          </div>
+          <div id="glow">
+            <div className="circle" />
+            <div className="circle" />
+          </div>
+        </button>
+      </Link>
       <div className="list-cities">
         {cities.map((city) => {
           return (

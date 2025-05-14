@@ -1,8 +1,8 @@
-.btn {
+.btn-town {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 13rem;
+  width: 208px;
   overflow: hidden;
   height: 3rem;
   background-size: 300% 300%;
@@ -21,8 +21,7 @@
     );
   background-origin: border-box;
   background-clip: content-box, border-box;
-  margin-left: 32px;
-  margin-bottom: 32px;
+  margin: 0 0 32px 32px;
 }
 
 #container-stars {
@@ -36,13 +35,14 @@
   border-radius: 5rem;
 }
 
-button strong {
+.btn-town strong {
   z-index: 2;
   font-family: "Poppins" sans-serif;
   font-size: 16px;
   letter-spacing: 3px;
   color: #ffffff;
   text-shadow: 0 0 4px rgb(0, 0, 0);
+  text-decoration: none;
 }
 
 #glow {
@@ -72,18 +72,18 @@ button strong {
   background-color: #212121;
 }
 
-.btn:hover {
+.btn-town:hover {
   transform: scale(1.1);
 }
 
-.btn:active {
+.btn-town:active {
   border: double 4px #fe53bb;
   background-origin: border-box;
   background-clip: content-box, border-box;
   animation: none;
 }
 
-.btn:active .circle {
+.btn-town:active .circle {
   background: #fe53bb;
 }
 
