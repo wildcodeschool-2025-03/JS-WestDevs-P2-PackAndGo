@@ -14,20 +14,15 @@ function TownDetail() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("http://localhost:3310/api/cities")
-      .then((response) => response.json())
-      .then((data: City[]) => {
-        const exactCity = data.find(
-          (city) => city.data.attributes.slug === slug,
-        );
-        setCity(exactCity);
-      })
-      .catch((error) => {
-        console.error("Erreur lors du chargement:", error);
-      });
+    fetch(`http://localhost:3310/api/cities/${slug}`)
+      .then((res) => res.json())
+      .then((data) => setCity(data));
   }, [slug]);
 
   if (!city) return <h1>Ville non trouvée</h1>;
+
+  const { accommodation, transport, budget, culture, local_food } =
+    city.data.attributes.info;
 
   return (
     <main className="town-detail-main">
@@ -91,32 +86,22 @@ function TownDetail() {
         <section className="text-display">
           {activeSection === "hotel" && (
             <HotelBudget
-              budgetEcoHotel={
-                city.data.attributes.info.accommodation.budget_hotel
-              }
-              classicHotel={city.data.attributes.info.accommodation.hostel}
-              midRangeHotel={
-                city.data.attributes.info.accommodation.midrange_hotel
-              }
-              luxuryHotel={city.data.attributes.info.accommodation.luxury_hotel}
+              budgetEcoHotel={accommodation.budget_hotel}
+              classicHotel={accommodation.hostel}
+              midRangeHotel={accommodation.midrange_hotel}
+              luxuryHotel={accommodation.luxury_hotel}
             />
           )}
-          {activeSection === "food" && (
-            <LocalFood key="food" food={city.data.attributes.info.local_food} />
-          )}
+          {activeSection === "food" && <LocalFood food={local_food} />}
           {activeSection === "transport" && (
             <TransportBudget
-              publicTransport={city.data.attributes.info.transport.public}
-              taxi={city.data.attributes.info.transport.taxi}
-              bikeRental={city.data.attributes.info.transport.bike_rental}
+              publicTransport={transport.public}
+              taxi={transport.taxi}
+              bikeRental={transport.bike_rental}
             />
           )}
-          {activeSection === "culture" && (
-            <CultureDetail culture={city.data.attributes.info.culture} />
-          )}
-          {activeSection === "global" && (
-            <GlobalBudgetDetail budget={city.data.attributes.info.budget} />
-          )}
+          {activeSection === "culture" && <CultureDetail culture={culture} />}
+          {activeSection === "global" && <GlobalBudgetDetail budget={budget} />}
         </section>
       </section>
     </main>
