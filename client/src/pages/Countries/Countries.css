@@ -136,13 +136,8 @@
   transition: 0.25s ease;
   display: flex;
   justify-content: center;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  margin-left: 16px;
-  margin-right: 16px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-  margin-bottom: 48px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 .stack:hover {
   transform: rotate(5deg);
@@ -253,9 +248,12 @@
 }
 
 @media (min-width: 768px) {
+  .countries-main-container h1 {
+    font-size: 4rem;
+  }
   .card {
-    width: 80%;
-    max-width: 700px;
+    width: 90%;
+    max-width: 800px;
     aspect-ratio: 16 / 9;
     padding: 0% 1% 2% 1%;
   }
@@ -273,7 +271,7 @@
     max-width: 700px;
     transition: 0.25s ease;
     padding: 24px 0;
-    margin: 0 48px;
+    margin: 48px;
   }
 }
 @media (max-width: 768px) {

@@ -20,6 +20,20 @@ app.get("/countries", (req, res) => {
 app.get("/api/cities", (req, res) => {
   res.json(cities);
 });
+
+app.get("/api/cities/:slug", (req, res) => {
+  const { slug } = req.params;
+
+  const findCity = cities.find((el) => el.data.attributes.slug === slug);
+
+  if (!findCity) {
+    res.status(404).send("They're no cities here");
+    return;
+  }
+
+  res.json(findCity);
+});
+
 // Configure it
 
 /* ************************************************************************* */
