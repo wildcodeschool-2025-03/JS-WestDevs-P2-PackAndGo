@@ -9,7 +9,12 @@ function TransportBudget({
     <section className="town-text-detail">
       <article>
         <h3>Transports</h3>
-        <p>Les différents moyen de transport: {publicTransport.types}</p>
+        <p>
+          Les différents moyen de transport:{" "}
+          {publicTransport.types?.map((el) => (
+            <span key={el}> {el}</span>
+          ))}
+        </p>
 
         <p>
           {publicTransport.average_ticket} {publicTransport.currency}

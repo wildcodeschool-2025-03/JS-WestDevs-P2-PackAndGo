@@ -5,7 +5,6 @@ function CultureDetail({ culture }: CultureDetailProps) {
     <section className="town-text-detail">
       <article>
         <h3>Culture : </h3>
-        <h4>Pour les plus connus : </h4>
         {culture.must_see.map((item) => (
           <span key={item}>
             {" "}
