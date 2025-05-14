@@ -7,7 +7,7 @@ function HotelBudget({
   luxuryHotel,
 }: HotelBudgetProps) {
   return (
-    <main className="component-detail-button-container">
+    <section className="town-text-detail">
       <article>
         <h3>Hôtel economique </h3>
         <p>
@@ -36,7 +36,7 @@ function HotelBudget({
         </p>
         <p>{luxuryHotel.description}</p>
       </article>
-    </main>
+    </section>
   );
 }
 export default HotelBudget;

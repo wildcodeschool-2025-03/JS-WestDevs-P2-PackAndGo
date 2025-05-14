@@ -49,22 +49,17 @@
   }
 
   .text-display {
-    min-height: 200px;
+    /* A modifier, trouver quelque chose à l'aide d'une petite animation */
+    min-height: 350px;
     padding: 16px;
-    background-color: #f0f0f0;
-    border-radius: 8px;
+    border-radius: 16px;
     background-color: #f4d1d1;
-    animation: fadeSlideIn 0.4s ease forwards;
   }
+  .town-text-detail {
+    transition: opacity 600ms;
 
-  @keyframes fadeSlideIn {
-    from {
+    @starting-style {
       opacity: 0;
-      transform: translateY(12px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
     }
   }
 
@@ -74,7 +69,7 @@
       height: 40vh;
     }
     .town-detail-info {
-      grid-template-columns: 20% 80%;
+      grid-template-columns: 1fr 4fr;
     }
     .buttons-column {
       button {

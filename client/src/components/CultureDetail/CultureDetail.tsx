@@ -2,7 +2,7 @@ import type { CultureDetailProps } from "../../types/Town";
 
 function CultureDetail({ culture }: CultureDetailProps) {
   return (
-    <main className="component-detail-button-container">
+    <section className="town-text-detail">
       <article>
         <h3>Culture : </h3>
         <h4>Pour les plus connus : </h4>
@@ -15,7 +15,7 @@ function CultureDetail({ culture }: CultureDetailProps) {
         <p>{culture.description}</p>
         <p>{culture.tips}</p>
       </article>
-    </main>
+    </section>
   );
 }
 export default CultureDetail;

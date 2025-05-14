@@ -6,7 +6,7 @@ function TransportBudget({
   bikeRental,
 }: TransportBudgetProps) {
   return (
-    <main className="component-detail-button-container">
+    <section className="town-text-detail">
       <article>
         <h3>Transports</h3>
         <p>Les différents moyen de transport: {publicTransport.types}</p>
@@ -34,7 +34,7 @@ function TransportBudget({
         <p>{bikeRental.description}</p>
         <p>{bikeRental.tips}</p>
       </article>
-    </main>
+    </section>
   );
 }
 export default TransportBudget;

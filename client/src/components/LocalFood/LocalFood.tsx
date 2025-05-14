@@ -3,17 +3,15 @@ import "./LocalFood.css";
 
 function LocalFood({ food }: LocalFoodProps) {
   return (
-    <main className="component-detail-button-container">
-      <article>
-        <h3>Local food :</h3>
-        {food.specialties.map((food) => (
-          <span key={food}> {food}</span>
-        ))}
-        <p> {food.description}</p>
+    <section className="town-text-detail">
+      <h3>Local food :</h3>
+      {food.specialties.map((food) => (
+        <span key={food}> {food}</span>
+      ))}
+      <p> {food.description}</p>
 
-        <p> {food.tips}</p>
-      </article>
-    </main>
+      <p> {food.tips}</p>
+    </section>
   );
 }
 export default LocalFood;

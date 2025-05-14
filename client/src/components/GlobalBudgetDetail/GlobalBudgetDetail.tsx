@@ -2,7 +2,7 @@ import type { GlobalBudgetProps } from "../../types/Town";
 
 function GlobalBudgetDetail({ budget }: GlobalBudgetProps) {
   return (
-    <main className="component-detail-button-container">
+    <section className="town-text-detail">
       <article>
         <h3>Budget : </h3>
 
@@ -15,7 +15,7 @@ function GlobalBudgetDetail({ budget }: GlobalBudgetProps) {
         <p>{budget.notes}</p>
         <p>{budget.tips}</p>
       </article>
-    </main>
+    </section>
   );
 }
 export default GlobalBudgetDetail;
