@@ -7,6 +7,7 @@ import HotelBudget from "../../components/HotelBudget/HotelBudget";
 import LocalFood from "../../components/LocalFood/LocalFood";
 import TransportBudget from "../../components/TransportBudget/TransportBudget";
 import type { City } from "../../types/Town";
+import "../button.css";
 
 function TownDetail() {
   const { slug, countryName } = useParams<{
