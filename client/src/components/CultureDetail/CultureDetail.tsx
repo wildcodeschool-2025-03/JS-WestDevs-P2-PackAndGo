@@ -7,8 +7,7 @@ function CultureDetail({ culture }: CultureDetailProps) {
         <h3>Culture : </h3>
         {culture.must_see.map((item) => (
           <span key={item}>
-            {" "}
-            <strong>{item}</strong>
+            <strong> {item}</strong>
           </span>
         ))}
         <p>{culture.description}</p>
