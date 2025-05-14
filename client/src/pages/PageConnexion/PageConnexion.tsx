@@ -1,14 +1,54 @@
 import { Link } from "react-router";
+import { useAuth } from "../../hooks/AuthContext";
 import "./PageConnexion.css";
+import { useState } from "react";
 
 function PageConnexion() {
+  const { isLogged, login, logout } = useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !password) {
+      setError("Veuillez remplir tous les champs.");
+      return;
+    }
+    login();
+  };
+  if (isLogged) {
+    return (
+      <main className="background-page-connexion">
+        <div className="form-container">
+          <p className="title">Vous êtes connecté !</p>
+          <button className="form-btn" type="button" onClick={logout}>
+            Se déconnecter
+          </button>
+        </div>
+      </main>
+    );
+  }
   return (
     <main className="background-page-connexion">
       <div className="form-container">
         <p className="title">Connexion</p>
-        <form className="form">
-          <input type="email" className="input" placeholder="Email" />
-          <input type="password" className="input" placeholder="Password" />
+        <form className="form" onSubmit={handleLogin}>
+          <input
+            type="email"
+            className="input"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            className="input"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {error && <p className="error-message">{error}</p>}
           <p className="page-link">
             <span className="page-link-label">Mot de passe oublié ?</span>
           </p>
