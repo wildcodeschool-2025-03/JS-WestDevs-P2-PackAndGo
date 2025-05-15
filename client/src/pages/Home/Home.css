@@ -31,7 +31,6 @@
     z-index: 2;
 
     h1 {
-      /* color: #652306; */
       color: var(--title-color);
       text-shadow: var(--title-text-shadow);
       font-size: 1.1rem;
