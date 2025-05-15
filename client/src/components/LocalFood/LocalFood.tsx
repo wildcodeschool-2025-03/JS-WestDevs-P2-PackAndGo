@@ -3,10 +3,10 @@ import "./LocalFood.css";
 
 function LocalFood({ food }: LocalFoodProps) {
   return (
-    <section className="town-text-detail">
-      <h3>Local food :</h3>
+    <section className="town-text-detail local-food">
+      <h3>Spécialités locales :</h3>
       {food.specialties.map((food) => (
-        <span key={food}> {food}</span>
+        <span key={food}> {food}.</span>
       ))}
       <p> {food.description}</p>
 

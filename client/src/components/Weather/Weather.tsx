@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { WeatherData, WeatherProps } from "../../types/Town";
+import "./Weather.css";
 
 function Weather({ lat, lon }: WeatherProps) {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
@@ -29,51 +30,44 @@ function Weather({ lat, lon }: WeatherProps) {
   }, [weatherData, lat, lon]);
 
   return (
-    <>
-      <div>
-        {loading && <p>Chargement des données météo...</p>}
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        {weatherData && (
-          <>
-            <article>
-              <h3>Température minimale :</h3>
-              <p>
-                {weatherData.data_day.temperature_min[0]}{" "}
-                {weatherData.units.temperature}
-              </p>
+    <section className="town-text-detail weather-detail">
+      {loading && <p>Chargement des données météo...</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      {weatherData && (
+        <>
+          <h3>Température minimale :</h3>
+          <p>
+            {weatherData.data_day.temperature_min[0]}{" "}
+            {weatherData.units.temperature}
+          </p>
+
+          <h3>Température maximale :</h3>
+          <p>
+            {weatherData.data_day.temperature_max[0]}{" "}
+            {weatherData.units.temperature}
+          </p>
+
+          <h3>Précipitations :</h3>
+          <p>
+            {weatherData.data_day.precipitation[0]}{" "}
+            {weatherData.units.precipitation}
+          </p>
+
+          <h3>Prévisions des prochains jours :</h3>
+          {weatherData.data_day.time.map((day, index) => (
+            <article key={day}>
+              <strong>{day}</strong> - Min:{" "}
+              {weatherData.data_day.temperature_min[index]}{" "}
+              {weatherData.units.temperature}, Max:{" "}
+              {weatherData.data_day.temperature_max[index]}{" "}
+              {weatherData.units.temperature}, Précipitations:{" "}
+              {weatherData.data_day.precipitation[index]}{" "}
+              {weatherData.units.precipitation}
             </article>
-            <article>
-              <h3>Température maximale :</h3>
-              <p>
-                {weatherData.data_day.temperature_max[0]}{" "}
-                {weatherData.units.temperature}
-              </p>
-            </article>
-            <article>
-              <h3>Précipitations :</h3>
-              <p>
-                {weatherData.data_day.precipitation[0]}{" "}
-                {weatherData.units.precipitation}
-              </p>
-            </article>
-            <article>
-              <h3>Prévisions des prochains jours :</h3>
-              {weatherData.data_day.time.map((day, index) => (
-                <div key={day}>
-                  <strong>{day}</strong> - Min:{" "}
-                  {weatherData.data_day.temperature_min[index]}{" "}
-                  {weatherData.units.temperature}, Max:{" "}
-                  {weatherData.data_day.temperature_max[index]}{" "}
-                  {weatherData.units.temperature}, Précipitations:{" "}
-                  {weatherData.data_day.precipitation[index]}{" "}
-                  {weatherData.units.precipitation}
-                </div>
-              ))}
-            </article>
-          </>
-        )}
-      </div>
-    </>
+          ))}
+        </>
+      )}
+    </section>
   );
 }
 
