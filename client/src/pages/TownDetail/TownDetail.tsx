@@ -30,7 +30,8 @@ function TownDetail() {
 
   const { accommodation, transport, budget, culture, local_food } =
     city.data.attributes.info;
-  const loc = city.data.attributes;
+  const { latitude, longitude } = city.data.attributes;
+
   return (
     <main className="town-detail-main">
       <Link to={`/countries/${countryName}`}>
@@ -132,7 +133,7 @@ function TownDetail() {
           {activeSection === "culture" && <CultureDetail culture={culture} />}
           {activeSection === "global" && <GlobalBudgetDetail budget={budget} />}
           {activeSection === "meteo" && (
-            <Weather lat={loc.latitude} lon={loc.longitude} />
+            <Weather lat={latitude} lon={longitude} />
           )}
         </section>
       </section>
