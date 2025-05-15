@@ -19,7 +19,11 @@ header nav {
   .header-icone-container {
     display: flex;
     gap: 0.5rem;
-    padding: 0 2rem 0 0;
+    padding: 0 8px 0 0;
+    > a {
+      display: flex;
+      align-items: center;
+    }
   }
 
   .logo-site {
@@ -30,23 +34,33 @@ header nav {
   .icone {
     width: 32px;
     height: 32px;
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.2);
+    }
   }
-
+  #burger-menu {
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
   .navbar-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 
     @media screen and (max-width: 768px) {
       flex-direction: column;
-
       width: 100%;
       background-color: #edab12;
-      z-index: 1;
+      z-index: 10;
+      position: absolute;
+      top: 54px;
+      left: 0;
       display: none;
 
       &.show {
@@ -58,17 +72,15 @@ header nav {
       position: relative;
       padding: 1rem;
 
-      &:hover {
-        display: flex;
-        flex-direction: column;
-      }
-
       a {
         color: black;
         text-decoration: none;
+        position: relative;
+        transition: transform 0.3s ease;
+        display: inline-block;
 
         &:hover {
-          color: #ff9900;
+          transform: scale(1.2);
         }
       }
     }
@@ -94,10 +106,14 @@ header nav {
       }
     }
   }
-}
-
-@media screen and (min-width: 768px) {
-  .icone {
-    margin-top: 8px;
+  @media screen and (min-width: 768px) {
+    .icone {
+      margin-top: 8px;
+    }
+    .header-icone-container {
+      > a {
+        display: block;
+      }
+    }
   }
 }
