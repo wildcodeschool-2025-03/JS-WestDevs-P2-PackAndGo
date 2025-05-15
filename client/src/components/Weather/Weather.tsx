@@ -16,7 +16,6 @@ function Weather({ lat, lon }: WeatherProps) {
 
       fetch(API_URL)
         .then((res) => {
-          console.log(res);
           if (!res.ok) throw new Error("Erreur lors de l'appel API");
           return res.json();
         })
@@ -46,35 +45,26 @@ function Weather({ lat, lon }: WeatherProps) {
               <article>
                 <h3>Température minimale :</h3>
                 <p>
-                  {weatherData.data_day.temperature_min[0]}{" "}
-                  {weatherData.units.temperature}
+                  {weatherData.data_day.temperature_min[0]} {weatherData.units.temperature}
                 </p>
               </article>
               <article>
                 <h3>Température maximale :</h3>
                 <p>
-                  {weatherData.data_day.temperature_max[0]}{" "}
-                  {weatherData.units.temperature}
+                  {weatherData.data_day.temperature_max[0]} {weatherData.units.temperature}
                 </p>
               </article>
               <article>
                 <h3>Précipitations :</h3>
                 <p>
-                  {weatherData.data_day.precipitation[0]}{" "}
-                  {weatherData.units.precipitation}
+                  {weatherData.data_day.precipitation[0]} {weatherData.units.precipitation}
                 </p>
               </article>
               <article>
                 <h3>Prévisions des prochains jours :</h3>
                 {weatherData.data_day.time.map((day, index) => (
                   <div key={day}>
-                    <strong>{day}</strong> - Min:{" "}
-                    {weatherData.data_day.temperature_min[index]}{" "}
-                    {weatherData.units.temperature}, Max:{" "}
-                    {weatherData.data_day.temperature_max[index]}{" "}
-                    {weatherData.units.temperature}, Précipitations:{" "}
-                    {weatherData.data_day.precipitation[index]}{" "}
-                    {weatherData.units.precipitation}
+                    <strong>{day}</strong> - Min: {weatherData.data_day.temperature_min[index]} {weatherData.units.temperature}, Max: {weatherData.data_day.temperature_max[index]} {weatherData.units.temperature}, Précipitations: {weatherData.data_day.precipitation[index]} {weatherData.units.precipitation}
                   </div>
                 ))}
               </article>
