@@ -6,6 +6,7 @@ import GlobalBudgetDetail from "../../components/GlobalBudgetDetail/GlobalBudget
 import HotelBudget from "../../components/HotelBudget/HotelBudget";
 import LocalFood from "../../components/LocalFood/LocalFood";
 import TransportBudget from "../../components/TransportBudget/TransportBudget";
+import Weather from "../../components/Weather/Weather";
 import type { City } from "../../types/Town";
 import "../button.css";
 import { Link } from "react-router";
@@ -29,7 +30,7 @@ function TownDetail() {
 
   const { accommodation, transport, budget, culture, local_food } =
     city.data.attributes.info;
-
+  const loc = city.data.attributes;
   return (
     <main className="town-detail-main">
       <Link to={`/countries/${countryName}`}>
@@ -100,6 +101,15 @@ function TownDetail() {
           >
             💰 Budget jour
           </button>
+          <button
+            type="button"
+            onClick={() => {
+              setActiveSection("meteo");
+            }}
+            className={activeSection === "meteo" ? "active" : ""}
+          >
+            ☀️ Météo
+          </button>
         </div>
 
         <section className="text-display">
@@ -121,6 +131,9 @@ function TownDetail() {
           )}
           {activeSection === "culture" && <CultureDetail culture={culture} />}
           {activeSection === "global" && <GlobalBudgetDetail budget={budget} />}
+          {activeSection === "meteo" && (
+            <Weather lat={loc.latitude} lon={loc.longitude} />
+          )}
         </section>
       </section>
     </main>

@@ -75,9 +75,9 @@ interface Global {
   short_name: string;
   realimage: string;
   population?: number;
-  slug: string;
   latitude: number;
   longitude: number;
+  slug: string;
 }
 interface Data {
   attributes: Global;
@@ -88,4 +88,26 @@ export interface City {
 }
 export interface ObjectDetail {
   city: City;
+}
+
+export interface WeatherProps {
+  lat: number;
+  lon: number;
+}
+export interface WeatherData {
+  metadata: {
+    latitude: number;
+    longitude: number;
+  };
+  units: {
+    precipitation: string;
+    temperature: string;
+    time: string;
+  };
+  data_day: {
+    time: number[];
+    temperature_max: number[];
+    temperature_min: number[];
+    precipitation: number[];
+  };
 }
