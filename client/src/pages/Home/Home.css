@@ -15,7 +15,7 @@
 .home-main-container {
   position: relative;
   min-height: calc(100vh - 55px - 55px);
-  background-image: url(../../../public/background-homepage.jpg);
+  background-image: url(/background-homepage.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
