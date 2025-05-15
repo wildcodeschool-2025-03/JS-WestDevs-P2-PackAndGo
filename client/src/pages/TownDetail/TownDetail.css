@@ -1,6 +1,85 @@
 .town-detail-main {
   min-height: calc(100vh - 55px - 55px);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background-color: #fff8f3;
+  .town-detail-title-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
   img {
-    width: 100%;
+    width: 90%;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  }
+  .town-detail-info {
+    display: grid;
+    padding: 16px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .buttons-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    button {
+      font-size: 16px;
+      font-weight: 800;
+      background-color: #f4d1d1;
+      margin: 0 auto;
+      width: 80%;
+      border: none;
+      padding: 8px;
+      border-radius: 16px;
+      transition: transform 0.25s ease;
+      &:active {
+        transform: scale(0.97);
+      }
+      &.active {
+        background-color: #ffe0e0;
+        border: 2px solid #ffaaaa;
+        transform: scaleX(1.08);
+      }
+    }
+  }
+
+  .text-display {
+    /* A modifier, trouver quelque chose à l'aide d'une petite animation */
+    min-height: 350px;
+    padding: 16px;
+    border-radius: 16px;
+    background-color: #f4d1d1;
+  }
+  .town-text-detail {
+    transition: opacity 600ms;
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+
+  @media (min-width: 992px) {
+    img {
+      width: 40%;
+      height: 40vh;
+    }
+    .town-detail-info {
+      grid-template-columns: 1fr 4fr;
+    }
+    .buttons-column {
+      button {
+        width: 100%;
+      }
+    }
+  }
+  @media (min-width: 1280px) {
+    img {
+      width: 35%;
+      height: 40vh;
+    }
   }
 }

@@ -1,27 +1,17 @@
-import { useState } from "react";
-import useHandleModal from "../../hooks/useHandleModal";
 import type { LocalFoodProps } from "../../types/Town";
+import "./LocalFood.css";
 
 function LocalFood({ food }: LocalFoodProps) {
-  const { handleChange } = useHandleModal();
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <>
-      <button type="button" onClick={() => handleChange(setIsOpen, isOpen)}>
-        Local food
-      </button>
-      {isOpen && (
-        <article>
-          <h3>Local food :</h3>
-          <p>{food.specialties} </p>
+    <section className="town-text-detail">
+      <h3>Local food :</h3>
+      {food.specialties.map((food) => (
+        <span key={food}> {food}</span>
+      ))}
+      <p> {food.description}</p>
 
-          <p> {food.description}</p>
-
-          <p> {food.tips}</p>
-        </article>
-      )}
-    </>
+      <p> {food.tips}</p>
+    </section>
   );
 }
 export default LocalFood;
