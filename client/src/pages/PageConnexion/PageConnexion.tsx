@@ -1,9 +1,11 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useAuth } from "../../hooks/AuthContext";
 import "./PageConnexion.css";
 import { useState } from "react";
 
 function PageConnexion() {
+  const navigate = useNavigate();
+
   const { isLogged, login, logout } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,6 +18,8 @@ function PageConnexion() {
       return;
     }
     login();
+
+    navigate("/countries");
   };
   if (isLogged) {
     return (
