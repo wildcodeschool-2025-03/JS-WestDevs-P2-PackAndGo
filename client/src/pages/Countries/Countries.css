@@ -1,6 +1,6 @@
 .countries-main-container {
   text-align: center;
-  background-color: #fff9ee;
+  background-color: var(--background-color);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -15,8 +15,8 @@
   flex-basis: 100%;
   margin: 0;
   font-size: 2rem;
-  color: rgba(0, 0, 0, 0.6);
-  text-shadow: 0 0 10px #f39d3c, 0 0 20px #ffa500, 0 0 30px #d4513a;
+  color: var(--title-color);
+  text-shadow: var(--title-text-shadow);
   padding-top: 80px;
   padding-bottom: 40px;
 }
@@ -152,7 +152,7 @@
   width: 80%;
   max-width: 320px;
   border: 3px solid;
-  background-color: #fae4e4;
+  background-color: var(--primary-color);
   position: relative;
   transition: 0.15s ease;
   cursor: pointer;
@@ -189,7 +189,6 @@
   position: relative;
 }
 .countries-main-container label {
-  background-color: #99ff00a1;
   display: flex;
   align-items: center;
   gap: 14px;
@@ -203,7 +202,12 @@
 .countries-main-container input {
   display: none;
 }
-
+.countries-main-container svg {
+  transition: transform 300ms ease;
+  &:hover {
+    transform: scale(1.5);
+  }
+}
 .countries-main-container input:checked + label svg {
   fill: hsl(0deg 100% 50%);
   stroke: hsl(0deg 100% 50%);
