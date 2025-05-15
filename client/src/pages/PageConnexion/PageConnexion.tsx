@@ -1,12 +1,20 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import "./PageConnexion.css";
 
 function PageConnexion() {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    navigate("/countries");
+  };
+
   return (
     <main className="background-page-connexion">
       <div className="form-container">
         <p className="title">Connexion</p>
-        <form className="form">
+        <form className="form" onSubmit={handleSubmit}>
           <input type="email" className="input" placeholder="Email" />
           <input type="password" className="input" placeholder="Password" />
           <p className="page-link">
