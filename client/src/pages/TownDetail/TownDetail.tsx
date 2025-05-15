@@ -7,9 +7,15 @@ import HotelBudget from "../../components/HotelBudget/HotelBudget";
 import LocalFood from "../../components/LocalFood/LocalFood";
 import TransportBudget from "../../components/TransportBudget/TransportBudget";
 import type { City } from "../../types/Town";
+import "../button.css";
+import { Link } from "react-router";
 
 function TownDetail() {
-  const { slug } = useParams<{ slug: string }>();
+  const { slug, countryName } = useParams<{
+    slug: string;
+    countryName: string;
+  }>();
+
   const [city, setCity] = useState<City>();
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
@@ -26,6 +32,19 @@ function TownDetail() {
 
   return (
     <main className="town-detail-main">
+      <Link to={`/countries/${countryName}`}>
+        <button type="button" className="btn-town">
+          <strong>PRECEDENT</strong>
+          <div id="container-stars">
+            <div id="stars" />
+          </div>
+          <div id="glow">
+            <div className="circle" />
+            <div className="circle" />
+          </div>
+        </button>
+      </Link>
+
       <section className="town-detail-title-img">
         <h1>{city.data.attributes.name}</h1>
         <img
