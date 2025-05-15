@@ -64,7 +64,7 @@ function TownDetail() {
             }}
             className={activeSection === "food" ? "active" : ""}
           >
-            🍽 Local Food
+            🍽 Spécialité
           </button>
           <button
             type="button"
@@ -73,7 +73,7 @@ function TownDetail() {
             }}
             className={activeSection === "hotel" ? "active" : ""}
           >
-            🏨 Hotel Budget
+            🏨 Budget Hotel
           </button>
           <button
             type="button"
