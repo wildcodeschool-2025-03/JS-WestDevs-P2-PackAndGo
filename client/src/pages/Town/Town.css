@@ -4,6 +4,7 @@
   background-color: #fff8f3;
   h1 {
     padding: 16px 0;
+    text-shadow: 0 0 10px #f39d3c, 0 0 20px #ffa500, 0 0 30px #d4513a;
   }
   .list-cities {
     display: grid;
@@ -20,6 +21,9 @@
       width: 90%;
       border-radius: 24px;
     }
+    .city-item h2 {
+      text-shadow: 0 0 10px #f39d3c, 0 0 20px #ffa500, 0 0 30px #d4513a;
+    }
   }
 
   @media screen and (min-width: 992px) {
@@ -28,6 +32,10 @@
     }
     h1 {
       padding-bottom: 64px;
+      font-size: 96px;
+    }
+    .city-item h2 {
+      font-size: 48px;
     }
   }
 }
