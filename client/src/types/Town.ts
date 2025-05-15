@@ -76,6 +76,8 @@ interface Global {
   realimage: string;
   population?: number;
   slug: string;
+  latitude: number;
+  longitude: number;
 }
 interface Data {
   attributes: Global;
