@@ -28,7 +28,7 @@ function Header() {
           <button onClick={toggleMenu} type="button" id="burger-menu">
             ☰
           </button>
-          <ul className={`navbar-list ${isMenuOpen ? "show" : ""}`}>
+          <ul className={`navbar-list ${isMenuOpen ? "show" : "hide"}`}>
             <li>
               <Link to="/" onClick={toggleMenu}>
                 Home
