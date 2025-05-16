@@ -1,12 +1,8 @@
-import { type ReactNode, createContext, useState } from "react";
+import { createContext, useState } from "react";
 import { useContext } from "react";
-import type { LightProps } from "../types/Light";
+import type { LightProps, ThemeProviderProps } from "../types/Light";
 
 export const ThemeContext = createContext<LightProps | null>(null);
-
-interface ThemeProviderProps {
-  children: ReactNode;
-}
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const [light, setLight] = useState(false);
