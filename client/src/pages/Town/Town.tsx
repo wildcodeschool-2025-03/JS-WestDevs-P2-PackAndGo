@@ -2,7 +2,7 @@ import "./Town.css";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import type { City } from "../../types/Town";
-import "../button.css";
+import "../../styles/button.css";
 import useLight from "../../hooks/ThemeProvider";
 
 function Town() {

@@ -8,7 +8,7 @@ import LocalFood from "../../components/LocalFood/LocalFood";
 import TransportBudget from "../../components/TransportBudget/TransportBudget";
 import Weather from "../../components/Weather/Weather";
 import type { City } from "../../types/Town";
-import "../button.css";
+import "../../styles/button.css";
 import { Link } from "react-router";
 import useLight from "../../hooks/ThemeProvider";
 
