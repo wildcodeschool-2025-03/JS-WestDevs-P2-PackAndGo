@@ -8,7 +8,7 @@ import LocalFood from "../../components/LocalFood/LocalFood";
 import TransportBudget from "../../components/TransportBudget/TransportBudget";
 import Weather from "../../components/Weather/Weather";
 import type { City } from "../../types/Town";
-import "../button.css";
+import "../../styles/button.css";
 import { Link } from "react-router";
 import useLight from "../../hooks/ThemeProvider";
 
@@ -36,8 +36,8 @@ function TownDetail() {
 
   return (
     <main className={`town-detail-main ${light && "light"}`}>
-      <Link to={`/countries/${countryName}`}>
-        <button type="button" className="btn-town">
+      <Link to={`/countries/${countryName}`} className="btn-disabled">
+        <button type="button" className="btn-town btn-town-detail">
           <strong>PRECEDENT</strong>
           <div id="container-stars">
             <div id="stars" />
@@ -48,9 +48,9 @@ function TownDetail() {
           </div>
         </button>
       </Link>
-
       <section className="town-detail-title-img">
         <h1>{city.data.attributes.name}</h1>
+
         <img
           src={city.data.attributes.realimage}
           alt={city.data.attributes.name}

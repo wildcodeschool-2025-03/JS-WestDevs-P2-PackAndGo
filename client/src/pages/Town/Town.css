@@ -3,6 +3,7 @@
   text-align: center;
   background-color: var(--background-color);
   h1 {
+    margin: 16px 0;
     padding: 16px 0;
     text-shadow: var(--title-text-shadow);
     color: var(--title-color);
@@ -34,10 +35,18 @@
     }
     h1 {
       padding-bottom: 64px;
-      font-size: 96px;
+      font-size: 3rem;
     }
     .city-item h2 {
-      font-size: 48px;
+      font-size: 32px;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    h1 {
+      font-size: 3.5rem;
+    }
+    .city-item h2 {
+      font-size: 40px;
     }
   }
 }
