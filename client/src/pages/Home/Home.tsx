@@ -14,9 +14,7 @@ function Home() {
             Laissez-vous guider vers des aventures inoubliables. Votre escapade
             commence ici !
           </p>
-          <Link to="/countries" target="_blank" rel="noopener noreferrer">
-            Explorer
-          </Link>
+          <Link to="/countries">Explorer</Link>
         </article>
       </section>
     </main>
