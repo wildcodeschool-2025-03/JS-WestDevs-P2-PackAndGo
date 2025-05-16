@@ -10,7 +10,10 @@
   --primary-color: #f4d1d1;
   --background-color: #fff8f3;
   --title-color: rgba(0, 0, 0, 0.6);
-  --title-text-shadow: 0 0 10px #f39d3c, 0 0 20px #ffa500, 0 0 30px #d4513a;
+  --title-text-shadow: 0 0 1px #f39d3c, 0 0 20px #ffa500, 0 0 30px #d4513a;
+
+  --dark-background-color: #535252;
+  --dark-text-color: rgb(255, 238, 238);
 }
 * {
   box-sizing: border-box;
@@ -20,4 +23,12 @@
 body {
   font-family: "Montserrat", sans-serif;
   background-color: var(--background-color);
+}
+
+.light {
+  background-color: var(--dark-background-color) !important;
+  h1,
+  h2 {
+    color: var(--dark-text-color) !important;
+  }
 }
