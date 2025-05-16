@@ -3,9 +3,12 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import type { City } from "../../types/Town";
 import "../button.css";
+import useLight from "../../hooks/ThemeProvider";
+
 function Town() {
   const [cities, setCities] = useState<City[]>([]);
   const { countryName } = useParams();
+  const { light } = useLight();
 
   useEffect(() => {
     fetch("http://localhost:3310/api/cities")
@@ -28,7 +31,7 @@ function Town() {
   }, [countryName]);
 
   return (
-    <main className="town-main">
+    <main className={`town-main ${light && "light"}`}>
       <h1>{countryName}</h1>
       <Link to="/countries">
         <button type="button" className="btn-town">

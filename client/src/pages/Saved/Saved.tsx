@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./Saved.css";
 import { Link } from "react-router";
 import { useAuth } from "../../hooks/AuthContext";
+import useLight from "../../hooks/ThemeProvider";
 import type CountryProp from "../../types/Countries";
 
 function getSavedFavorites(): CountryProp[] {
@@ -12,6 +13,8 @@ function getSavedFavorites(): CountryProp[] {
 function Saved() {
   const [travels, setTravels] = useState<CountryProp[]>([]);
   const { isLogged } = useAuth();
+  const { light } = useLight();
+
   useEffect(() => {
     setTravels(getSavedFavorites());
   }, []);
@@ -24,7 +27,7 @@ function Saved() {
   };
 
   return (
-    <main className="save-main-container">
+    <main className={`save-main-container ${light && "light"}`}>
       <h1>Vos futurs voyages</h1>
       <div className="travels-list">
         {isLogged &&
