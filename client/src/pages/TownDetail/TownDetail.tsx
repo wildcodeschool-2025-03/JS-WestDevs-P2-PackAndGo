@@ -10,6 +10,7 @@ import Weather from "../../components/Weather/Weather";
 import type { City } from "../../types/Town";
 import "../button.css";
 import { Link } from "react-router";
+import useLight from "../../hooks/ThemeProvider";
 
 function TownDetail() {
   const { slug, countryName } = useParams<{
@@ -17,6 +18,7 @@ function TownDetail() {
     countryName: string;
   }>();
 
+  const { light } = useLight();
   const [city, setCity] = useState<City>();
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
@@ -33,7 +35,7 @@ function TownDetail() {
   const { latitude, longitude } = city.data.attributes;
 
   return (
-    <main className="town-detail-main">
+    <main className={`town-detail-main ${light && "light"}`}>
       <Link to={`/countries/${countryName}`} className="btn-disabled">
         <button type="button" className="btn-town btn-town-detail">
           <strong>PRECEDENT</strong>

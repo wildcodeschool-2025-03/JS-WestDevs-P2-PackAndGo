@@ -1,6 +1,7 @@
 import "./Header.css";
 import { useState } from "react";
 import { Link } from "react-router";
+import ToggleTheme from "../ToggleTheme/ToggleTheme";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,6 +18,7 @@ function Header() {
         </figure>
 
         <div className="header-icone-container">
+          <ToggleTheme />
           <Link to="/connexion">
             <img
               src="icone-header-connexion.png"

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import "./Countries.css";
+import useLight from "../../hooks/ThemeProvider";
 import type CountryProp from "../../types/Countries";
 
 function Countries() {
   const [countriesList, setCountriesList] = useState<CountryProp[]>([]);
   const [favorites, setFavorites] = useState<Record<number, boolean>>({});
-
+  const { light } = useLight();
   useEffect(() => {
     fetch("http://localhost:3310/countries")
       .then((response) => response.json())
@@ -62,7 +63,7 @@ function Countries() {
   };
 
   return (
-    <main className="countries-main-container">
+    <main className={`countries-main-container ${light && "light"}`}>
       <h1>Sélectionnez vos futures destinations</h1>
       <section>
         <div className="section-banner" />
