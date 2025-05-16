@@ -3,6 +3,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
+  position: relative;
 
   min-height: calc(100vh - 55px - 55px);
   color: white;
@@ -14,9 +15,11 @@
     display: grid;
   }
   p {
+    color: white;
     width: 75%;
     margin: auto;
     padding: 30px;
+    font-weight: 500;
   }
 
   .avatar {
@@ -32,6 +35,7 @@
     .name {
       padding: 5px;
       color: black;
+      font-weight: bold;
     }
 
     .github {
