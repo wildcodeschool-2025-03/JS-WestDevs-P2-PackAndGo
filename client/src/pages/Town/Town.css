@@ -5,7 +5,8 @@
   h1 {
     margin: 16px 0;
     padding: 16px 0;
-    text-shadow: 0 0 10px #f39d3c, 0 0 20px #ffa500, 0 0 30px #d4513a;
+    text-shadow: var(--title-text-shadow);
+    color: var(--title-color);
   }
   .list-cities {
     display: grid;
@@ -23,7 +24,8 @@
       border-radius: 24px;
     }
     .city-item h2 {
-      text-shadow: 0 0 10px #f39d3c, 0 0 20px #ffa500, 0 0 30px #d4513a;
+      text-shadow: var(--title-text-shadow);
+      color: var(--title-color);
     }
   }
 
