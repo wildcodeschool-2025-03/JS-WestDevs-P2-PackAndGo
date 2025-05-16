@@ -10,7 +10,8 @@
     align-items: center;
     gap: 32px;
     h1 {
-      text-shadow: 0 0 10px #f39d3c, 0 0 20px #ffa500, 0 0 30px #d4513a;
+      text-shadow: var(--title-text-shadow);
+      color: var(--title-color);
     }
   }
 
