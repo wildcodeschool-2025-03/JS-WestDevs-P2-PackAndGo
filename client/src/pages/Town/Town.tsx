@@ -29,8 +29,8 @@ function Town() {
 
   return (
     <main className="town-main">
-      <h1>{countryName}</h1>
-      <Link to="/countries">
+      <h1>{countryName?.toUpperCase()}</h1>
+      <Link to="/countries" className="btn-disabled">
         <button type="button" className="btn-town">
           <strong>PRECEDENT</strong>
           <div id="container-stars">

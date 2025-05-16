@@ -23,6 +23,11 @@
   background-clip: content-box, border-box;
   margin: 0 0 32px 32px;
 }
+@media screen and (max-width: 992px) {
+  .btn-disabled {
+    display: none;
+  }
+}
 
 #container-stars {
   position: absolute;
