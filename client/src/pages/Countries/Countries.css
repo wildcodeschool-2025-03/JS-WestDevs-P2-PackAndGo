@@ -254,7 +254,7 @@
 
 @media (min-width: 768px) {
   .countries-main-container h1 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
   .card {
     width: 90%;
@@ -282,5 +282,10 @@
 @media (max-width: 768px) {
   .section-banner {
     display: none;
+  }
+}
+@media (min-width: 992px) {
+  .countries-main-container h1 {
+    font-size: 4rem;
   }
 }

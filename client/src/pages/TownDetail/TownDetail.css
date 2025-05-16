@@ -8,9 +8,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 32px;
+    gap: 48px;
     h1 {
       text-shadow: 0 0 10px #f39d3c, 0 0 20px #ffa500, 0 0 30px #d4513a;
+      margin-top: 16px;
     }
   }
 
@@ -50,9 +51,12 @@
       }
     }
   }
-
+  .btn-town-detail {
+    position: relative;
+    top: 15vh;
+    left: -10px;
+  }
   .text-display {
-    /* A modifier, trouver quelque chose à l'aide d'une petite animation */
     min-height: 350px;
     padding: 16px;
     border-radius: 16px;
@@ -65,10 +69,15 @@
       opacity: 0;
     }
   }
-
+  @media (min-width: 600px) {
+    .town-detail-title-img h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+  }
   @media (min-width: 992px) {
     .town-detail-title-img h1 {
-      font-size: 64px;
+      font-size: 3.5rem;
     }
     img {
       width: 40%;

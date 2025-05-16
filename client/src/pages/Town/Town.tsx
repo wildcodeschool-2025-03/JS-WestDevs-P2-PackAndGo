@@ -2,7 +2,7 @@ import "./Town.css";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 import type { City } from "../../types/Town";
-import "../button.css";
+import "../../styles/button.css";
 import useLight from "../../hooks/ThemeProvider";
 
 function Town() {
@@ -33,7 +33,7 @@ function Town() {
   return (
     <main className={`town-main ${light && "light"}`}>
       <h1>{countryName}</h1>
-      <Link to="/countries">
+      <Link to="/countries" className="btn-disabled">
         <button type="button" className="btn-town">
           <strong>PRECEDENT</strong>
           <div id="container-stars">
